@@ -5,6 +5,7 @@
 *.exe
 *.o
 *.so
+*.pyc
 
 # Packages
 *.7z
@@ -33,3 +34,4 @@ Thumbs.db
 
 # Virtual Environments
 *.env
+.*cache*
