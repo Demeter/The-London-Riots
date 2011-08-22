@@ -23,18 +23,34 @@ class ArticleCache(object):
     def __init__(self, article_store=ARTICLE_STORE):
         self.article_store_path = article_store
 
-    def fetch_article(self, article_store, entry):
-        article = Article(entry)
-        article_store[entry.link.encode("utf8")] = article
+    def __getitem__(self, link):
+        item = link.encode("utf8")
+        with closing(shelve.open(self.article_store_path)) as store:
+            return store[item]
+
+    def __setitem__(self, link, article):
+        item = link.encode("utf8")
+        with closing(shelve.open(self.article_store_path)) as store:
+            store[item] = article
+
+    def __contains__(self, link):
+        item = link.encode("utf8")
+        with closing(shelve.open(self.article_store_path)) as store:
+            return item in store
+
+    def fetch_article(self, entry):
+
         return article
 
     def __call__(self, feed):
-        with closing(shelve.open(self.article_store_path)) as article_store:
-            for entry in feed.entries:
-                if entry.link.encode("utf8") in article_store:
-                    continue
+        for entry in feed.entries:
+            if entry.link in self:
+                continue
 
-                yield self.fetch_article(article_store, entry)
+            article = Article(entry)
+            self[entry.link] = article
+
+            yield article
 
 class FeedCache(object):
     def __init__(self, url, cache_store=CACHE_STORE):
