@@ -25,13 +25,13 @@ class ArticleCache(object):
 
     def fetch_article(self, article_store, entry):
         article = Article(entry)
-        article_store[entry.link] = content
+        article_store[entry.link.encode("utf8")] = article
         return article
 
-    def __iter__(self, feed_entries):
+    def __call__(self, feed):
         with closing(shelve.open(self.article_store_path)) as article_store:
-            for entry in feed_entries:
-                if entry.link in article_store:
+            for entry in feed.entries:
+                if entry.link.encode("utf8") in article_store:
                     continue
 
                 yield self.fetch_article(article_store, entry)

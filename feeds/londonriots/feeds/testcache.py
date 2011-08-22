@@ -15,7 +15,15 @@ class TestCache(unittest.TestCase):
         if opath.exists(fcache.CACHE_STORE):
             os.unlink(fcache.CACHE_STORE)
 
+        self.feed_cache = fcache.FeedCache(TEST_FEED_URL)
+        self.article_cache = fcache.ArticleCache()
+
     def test_feed_cache(self):
-        feed_cache = fcache.FeedCache(TEST_FEED_URL)
-        entries = list(feed_cache())
+        entries = list(self.feed_cache())
         self.assert_(len(entries) > 0)
+
+    def test_article_cache(self):
+        first_batch = list(self.article_cache(self.feed_cache()))
+        second_batch = list(self.article_cache(self.feed_cache()))
+
+        self.assertNotEqual(first_batch, second_batch)
