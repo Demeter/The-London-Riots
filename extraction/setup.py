@@ -1,13 +1,14 @@
 from setuptools import setup, find_packages
 setup(
-    name = "extraction",
+    name = "londonriots.extraction",
     version = "0.1",
     packages = find_packages(),
 
     namespace_packages = ["londonriots"],
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
-    install_requires = ["londonriots.feeds"]
+    install_requires = ["londonriots.feeds", "nltk", 
+                        "BeautifulSoup"],
 
     package_data = {
         # If any package contains *.txt or *.rst files, include them:
