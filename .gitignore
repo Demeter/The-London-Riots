@@ -31,6 +31,7 @@ Thumbs.db
 # Emacs backup and work files
 *~
 .#*
+*#
 
 # Virtual Environments
 *.env
