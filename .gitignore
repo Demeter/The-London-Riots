@@ -36,3 +36,7 @@ Thumbs.db
 # Virtual Environments
 *.env
 .*cache*
+
+# Python Rope
+history
+objectdb
