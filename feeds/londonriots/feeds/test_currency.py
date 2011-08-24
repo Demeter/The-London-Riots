@@ -1,7 +1,7 @@
 import unittest
 from datetime import datetime as dt
 
-import londonriots.extraction.currency as currency
+import londonriots.feeds.currency as currency
 
 class TestCurrency(unittest.TestCase):
     currency_pair = ("GBP", "USD")
