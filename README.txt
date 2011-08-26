@@ -43,3 +43,36 @@ the `requests package`_.
 .. _feed cache package: http://www.doughellmann.com/articles/pythonmagazine/features/feedcache/
 .. _requests package: http://pypi.python.org/pypi/requests
 
+=================
+ Getting Started
+=================
+
+Creating the virtualenv
+-----------------------
+
+First, download or install `virtualenv`_. This package can be used to
+create isolated Python environments for working on a project without
+affecting or being affected by an existing system python. It still
+requires that Python be installed, but after that it keeps mostly
+to itself.
+
+.. _virtualenv: http://pypi.python.org/pypi/virtualenv
+
+Unpack that, and in the top directory there is a script called
+virtualenv.py. We'll need to run that, but from the top of the londonriots
+checkout::
+
+        python /path/to/virtualenv.py --no-site-packages dev.env
+
+This will create a virtual environment in the directory "dev.env", and we
+can use that for all of the development work, including installing
+packages and running the components of londonriots itself.
+
+Development Installation
+------------------------
+
+Next, we'll install the londonriots package in "development" mode, which
+downloads and installs all of the external packages, and then adds
+londonriots itself to the virtualenv for testing::
+
+        ./dev.env/
