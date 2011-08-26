@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
 setup(
-    name = "londonriots.feeds",
+    name = "londonriots",
     version = "0.1",
     packages = find_packages(),
 
-    namespace_packages = ["londonriots"],
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
     install_requires = ["requests",
@@ -12,17 +11,21 @@ setup(
                         "feedcache",
                         "sqlalchemy",
                         "pg8000",
-                        "BeautifulSoup"],
+                        "BeautifulSoup",
+                        "nltk"
+                        ],
 
     package_data = {
         # If any package contains *.txt or *.rst files, include them:
         "": ["*.txt", "*.rst"],
     },
 
+    test_suite = "londonriots",
+    test_loader = "unittest"
     # metadata for upload to PyPI
     author = "Evan Cofsky",
     author_email = "evan@tunixman.com",
-    description = "Feed manager for The London Riots.",
+    description = "The London Riots currency trading system.",
     license = "GPLv3",
     url = "https://github.com/tunixman/The-London-Riots",
 )
