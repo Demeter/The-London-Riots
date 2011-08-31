@@ -40,3 +40,6 @@ Thumbs.db
 # Python Rope
 history
 objectdb
+
+# Python eggs
+*.egg

@@ -5,13 +5,6 @@ development.ini
 production.ini
 setup.cfg
 setup.py
-liblondonriots/__init__.py
-liblondonriots/feeds/__init__.py
-liblondonriots/feeds/cache.py
-liblondonriots/feeds/currency.py
-liblondonriots/feeds/test_currency.py
-liblondonriots/feeds/testcache.py
-liblondonriots/feeds/model/__init__.py
 londonriots/__init__.py
 londonriots/models.py
 londonriots/tests.py
@@ -24,6 +17,12 @@ londonriots.egg-info/not-zip-safe
 londonriots.egg-info/paster_plugins.txt
 londonriots.egg-info/requires.txt
 londonriots.egg-info/top_level.txt
+londonriots/feeds/__init__.py
+londonriots/feeds/cache.py
+londonriots/feeds/currency.py
+londonriots/feeds/test_currency.py
+londonriots/feeds/testcache.py
+londonriots/feeds/model/__init__.py
 londonriots/static/favicon.ico
 londonriots/static/footerbg.png
 londonriots/static/headerbg.png
