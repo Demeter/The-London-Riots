@@ -1,0 +1,11 @@
+pyramid
+pyramid_tm
+pyramid_debugtoolbar
+sqlalchemy
+zope.sqlalchemy
+requests
+feedparser
+feedcache
+pg8000
+BeautifulSoup
+nltk

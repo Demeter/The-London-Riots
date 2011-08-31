@@ -40,6 +40,3 @@ Thumbs.db
 # Python Rope
 history
 objectdb
-
-# Python package data
-*.egg-info
