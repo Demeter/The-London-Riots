@@ -1,3 +1,6 @@
-      [paste.app_factory]
-      main = londonriots:main
-      
+[paste.app_factory]
+main = londonriots:main
+
+[console_scripts]
+pginit = londonriots.scripts.pginit:main
+

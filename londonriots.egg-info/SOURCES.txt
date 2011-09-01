@@ -23,6 +23,9 @@ londonriots/feeds/currency.py
 londonriots/feeds/test_currency.py
 londonriots/feeds/testcache.py
 londonriots/feeds/model/__init__.py
+londonriots/scripts/__init__.py
+londonriots/scripts/environ.py
+londonriots/scripts/pginit.py
 londonriots/static/favicon.ico
 londonriots/static/footerbg.png
 londonriots/static/headerbg.png

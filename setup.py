@@ -45,10 +45,8 @@ setup(name='londonriots',
       install_requires = requires,
       tests_require = requires,
       test_suite="londonriots",
-      entry_points = """\
-      [paste.app_factory]
-      main = londonriots:main
-      """,
+      entry_points = {"paste.app_factory": ["main = londonriots:main"],
+                      "console_scripts": ["pginit = londonriots.scripts.pginit:main"]},
       paster_plugins=['pyramid'],
       )
 
