@@ -30,8 +30,8 @@ def set_prefs(prefs):
     # The folders should be relative to project root and use '/' for
     # separating folders regardless of the platform rope is running on.
     # 'src/my_source_folder' for instance.
-    prefs.add('source_folders', 'feeds/londonriots')
-    prefs.add('source_folders', 'extraction/londonriots')
+    # prefs.add('source_folders', 'feeds/londonriots')
+    # prefs.add('source_folders', 'extraction/londonriots')
 
     # You can extend python path for looking up modules
     #prefs.add('python_path', '~/python/')
