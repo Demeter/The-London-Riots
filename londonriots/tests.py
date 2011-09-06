@@ -1,14 +1,23 @@
 import unittest
 
 from pyramid import testing
+from sqlalchemy import create_engine
+from sqlalchemy.exc import IntegrityError
+import londonriots.models as models
 
 def _initTestingDB():
-    from sqlalchemy import create_engine
-    from londonriots.models import initialize_sql
-    session = initialize_sql(create_engine('sqlite://'))
+    session = models.initialize_sql(create_engine('sqlite://'))
+    try:
+        populate(session)
+    except IntegrityError:
+        transaction.abort()
+
     return session
 
-class TestMyRoot(unittest.TestCase):
+def populate(session):
+    session.add(models.CurrencyPair(source=u'GBP', target="AUD"))
+
+class TestLRRoot(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
         self.session = _initTestingDB()
@@ -17,41 +26,20 @@ class TestMyRoot(unittest.TestCase):
         testing.tearDown()
         self.session.remove()
 
-    def _makeOne(self):
-        from londonriots.models import MyRoot
-        return MyRoot()
+    @property
+    def root(self):
+        return models.LRRoot()
 
     def test___getitem__hit(self):
-        from londonriots.models import MyModel
-        root = self._makeOne()
-        first = root['1']
-        self.assertEqual(first.__class__, MyModel)
-        self.assertEqual(first.__parent__, root)
-        self.assertEqual(first.__name__, '1')
+        root = self.root
+        first = root[("GBP", "AUD")]
 
     def test___getitem__miss(self):
-        root = self._makeOne()
-        self.assertRaises(KeyError, root.__getitem__, '100')
-
-    def test___getitem__notint(self):
-        root = self._makeOne()
-        self.assertRaises(KeyError, root.__getitem__, 'notint')
-
-    def test_get_hit(self):
-        from londonriots.models import MyModel
-        root = self._makeOne()
-        first = root.get('1')
-        self.assertEqual(first.__class__, MyModel)
-        self.assertEqual(first.__parent__, root)
-        self.assertEqual(first.__name__, '1')
-
-    def test_get_miss(self):
-        root = self._makeOne()
-        self.assertEqual(root.get('100', 'default'), 'default')
-        self.assertEqual(root.get('100'), None)
+        root = self.root
+        self.assertRaises(KeyError, root.__getitem__, ("USD", "JPY"))
 
     def test___iter__(self):
-        root = self._makeOne()
+        root = self.root
         iterable = iter(root)
         result = list(iterable)
         self.assertEqual(len(result), 1)
