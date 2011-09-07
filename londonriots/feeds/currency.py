@@ -18,8 +18,10 @@ time_format = "%a, %d %b %Y %H:%M:%S %Z"
 def CurrencyPriceYahoo(currency_pair):
         page = requests.get(url_template %{"source": currency_pair.source,
                                                 "target": currency_pair.target})
+        return PriceFromYahooPage(currency_pair, page.content)
 
-        dom = bs.BeautifulSoup(page.content)
+def PriceFromYahooPage(currency_pair, page):
+        dom = bs.BeautifulSoup(page)
         # with open("%(source)s%(target)s.html" % {"source": self.source,
             # "target": self.target}, 'w') as f:
             # f.write(page.content)
