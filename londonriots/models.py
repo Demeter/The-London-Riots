@@ -38,6 +38,11 @@ class TradeRate(Base):
     effective_date = Column(DateTime, nullable=False)
     rate = Column(Numeric(precision=15, scale=6), nullable=False)
 
+    def __init__(self, currency_pair, effective_date, rate):
+        self.currency_pair = currency_pair
+        self.effective_date = effective_date
+        self.rate = rate
+
 class Article(Base):
     __tablename__ = "article"
 
