@@ -20,8 +20,8 @@ class CurrencyPair(Base):
 
     id = Column(Integer, primary_key=True)
 
-    source = Column(Unicode(255), nullable=False)
-    target = Column(Unicode(255), nullable=False)
+    source = Column(Unicode(), nullable=False)
+    target = Column(Unicode(), nullable=False)
 
     trade_rates = relationship("TradeRate", backref="currency_pair")
 
@@ -37,6 +37,16 @@ class TradeRate(Base):
 
     effective_date = Column(DateTime, nullable=False)
     rate = Column(Numeric(precision=15, scale=6), nullable=False)
+
+class Article(Base):
+    __tablename__ = "article"
+
+    id = Column(Integer, primary_key=True)
+    currency_pair_id = Column(Integer, ForeignKey("currencypair.id"), nullable=False)
+
+    url = Column(Unicode(), nullable=False, unique=True)
+    effective_date = Column(DateTime, nullable=False)
+    source_text = Column(Text(), nullable=False)
 
 class LRRoot(object):
     __name__ = None
