@@ -17,7 +17,7 @@ def _initTestingDB():
 def populate(session):
     session.add(models.CurrencyPair(source=u'GBP', target="AUD"))
 
-class TestLRRoot(unittest.TestCase):
+class TestLR(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
         self.session = _initTestingDB()
@@ -29,19 +29,3 @@ class TestLRRoot(unittest.TestCase):
     @property
     def root(self):
         return models.LRRoot()
-
-    def test___getitem__hit(self):
-        root = self.root
-        first = root[("GBP", "AUD")]
-
-    def test___getitem__miss(self):
-        root = self.root
-        self.assertRaises(KeyError, root.__getitem__, ("USD", "JPY"))
-
-    def test___iter__(self):
-        root = self.root
-        iterable = iter(root)
-        result = list(iterable)
-        self.assertEqual(len(result), 1)
-        model = result[0]
-        self.assertEqual(model.id, 1)

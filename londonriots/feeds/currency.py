@@ -4,6 +4,7 @@ import requests
 import BeautifulSoup as bs
 from decimal import Decimal
 from datetime import datetime
+from londonriots.models import TradeRate
 
 def extract_sibling(table_headers, tag):
     return ((th for th in table_headers
@@ -11,22 +12,20 @@ def extract_sibling(table_headers, tag):
             .next()
             .nextSibling()[-1].text)
 
-class CurrencyPrice(object):
-    url_template = "http://finance.yahoo.com/q?s=%(source)s%(target)s=X"
-    time_format = "%a, %d %b %Y %H:%M:%S %Z"
+url_template = "http://finance.yahoo.com/q?s=%(source)s%(target)s=X"
+time_format = "%a, %d %b %Y %H:%M:%S %Z"
 
-    def __init__(self, (source, target)):
-        self.source, self.target = source, target
-
-        self.fetch()
-
-    def fetch(self):
-        page = requests.get(self.url_template %{"source": self.source,
-                                                "target": self.target})
+def CurrencyPriceYahoo(currency_pair):
+        page = requests.get(url_template %{"source": currency_pair.source,
+                                                "target": currency_pair.target})
 
         dom = bs.BeautifulSoup(page.content)
+        # with open("%(source)s%(target)s.html" % {"source": self.source,
+            # "target": self.target}, 'w') as f:
+            # f.write(page.content)
 
         thh = dom.findAll("th")
 
-        self.price = Decimal(extract_sibling(thh, "Last Trade"))
-        self.date = datetime.strptime(page.headers["date"], self.time_format)
+        price = Decimal(extract_sibling(thh, "Last Trade"))
+        date = datetime.now()
+        return TradeRate(currency_pair, date, price)

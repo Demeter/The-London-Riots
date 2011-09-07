@@ -7,7 +7,6 @@ setup.cfg
 setup.py
 londonriots/__init__.py
 londonriots/models.py
-londonriots/tests.py
 londonriots/views.py
 londonriots.egg-info/PKG-INFO
 londonriots.egg-info/SOURCES.txt
@@ -20,8 +19,6 @@ londonriots.egg-info/top_level.txt
 londonriots/feeds/__init__.py
 londonriots/feeds/cache.py
 londonriots/feeds/currency.py
-londonriots/feeds/test_currency.py
-londonriots/feeds/testcache.py
 londonriots/feeds/model/__init__.py
 londonriots/scripts/__init__.py
 londonriots/scripts/environ.py
@@ -37,3 +34,6 @@ londonriots/static/pyramid.png
 londonriots/static/transparent.gif
 londonriots/templates/model.pt
 londonriots/templates/root.pt
+londonriots/tests/__init__.py
+londonriots/tests/test_currency.py
+londonriots/tests/testcache.py
