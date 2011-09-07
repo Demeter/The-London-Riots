@@ -4,9 +4,11 @@ from pyramid import testing
 from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError
 import londonriots.models as models
+import transaction
 
 def _initTestingDB():
     session = models.initialize_sql(create_engine('sqlite://'))
+
     try:
         populate(session)
     except IntegrityError:
@@ -24,6 +26,7 @@ class TestLR(unittest.TestCase):
 
     def tearDown(self):
         testing.tearDown()
+        transaction.abort()
         self.session.remove()
 
     @property

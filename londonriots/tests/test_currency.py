@@ -11,7 +11,7 @@ class TestCurrency(TestLR):
 
     def setUp(self):
         TestLR.setUp(self)
-        currency_pair = root.get(self.currency_pair, CurrencyPair(*self.currency_pair))
+        currency_pair = root.get(self.currency_pair)
         self.tradeprice = currency.PriceFromYahooPage(currency_pair, page_body)
 
     def test_currency(self):
