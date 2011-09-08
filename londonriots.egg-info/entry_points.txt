@@ -2,5 +2,6 @@
 main = londonriots:main
 
 [console_scripts]
+fetch_articles = londonriots.scripts.fetch_articles:main
 pginit = londonriots.scripts.pginit:main
 
