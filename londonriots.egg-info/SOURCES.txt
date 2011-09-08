@@ -17,7 +17,6 @@ londonriots.egg-info/paster_plugins.txt
 londonriots.egg-info/requires.txt
 londonriots.egg-info/top_level.txt
 londonriots/feeds/__init__.py
-londonriots/feeds/cache.py
 londonriots/feeds/currency.py
 londonriots/scripts/__init__.py
 londonriots/scripts/environ.py
@@ -36,4 +35,3 @@ londonriots/templates/root.pt
 londonriots/tests/GBPUSD.html
 londonriots/tests/__init__.py
 londonriots/tests/test_currency.py
-londonriots/tests/testcache.py
