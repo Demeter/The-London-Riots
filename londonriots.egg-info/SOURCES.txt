@@ -19,7 +19,6 @@ londonriots.egg-info/top_level.txt
 londonriots/feeds/__init__.py
 londonriots/feeds/cache.py
 londonriots/feeds/currency.py
-londonriots/feeds/model/__init__.py
 londonriots/scripts/__init__.py
 londonriots/scripts/environ.py
 londonriots/scripts/pginit.py

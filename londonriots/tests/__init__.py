@@ -17,7 +17,7 @@ def _initTestingDB():
     return session
 
 def populate(session):
-    session.add(models.CurrencyPair(source=u'GBP', target="AUD"))
+    session.add(models.CurrencyPair(source=u'GBP', target="AUD", article_feed="http://news.google.com/news?hl=en&gl=us&q=usd+aud&um=1&ie=UTF-8&output=rss"))
 
 class TestLR(unittest.TestCase):
     def setUp(self):

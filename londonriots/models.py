@@ -22,12 +22,15 @@ class CurrencyPair(Base):
 
     source = Column(Unicode(), nullable=False)
     target = Column(Unicode(), nullable=False)
+    article_feed = Column(Unicode(), nullable=False)
 
     trade_rates = relationship("TradeRate", backref="currency_pair")
+    article = relationship("Article", backref="currency_pair")
 
-    def __init__(self, source, target):
+    def __init__(self, source, target, article_feed):
         self.source = unicode(source)
         self.target = unicode(target)
+        self.article_feed = unicode(article_feed)
 
 class TradeRate(Base):
     __tablename__ = "traderate"
@@ -71,14 +74,6 @@ class LRRoot(object):
 
         item.__parent__ = self
         item.__name__ = (source, target)
-        return item
-
-    def get(self, (source, target)):
-        try:
-            item = self[(source, target)]
-        except KeyError:
-            item = CurrencyPair(source, target)
-
         return item
 
     def __iter__(self):

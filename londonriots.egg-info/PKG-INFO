@@ -68,13 +68,31 @@ Description: ======================
         
         Unpack that, and in the top directory there is a script called
         virtualenv.py. We'll need to run that, but from the top of the londonriots
-        checkout::
+        checkout
         
                 python /path/to/virtualenv.py --no-site-packages dev.env
         
         This will create a virtual environment in the directory "dev.env", and we
         can use that for all of the development work, including installing
         packages and running the components of londonriots itself.
+        
+        
+        Installing NLTK
+        ---------------
+        
+        NLTK (Natural Language Toolkit) will be used to extract useful words from the feeds in order to help us find patterns. This is can be installed with:
+        
+        	./dev.env/bin/pip install http://nltk.googlecode.com/files/nltk-2.0.1rc1.tar.gz
+        
+        Installing and setup of Postgres
+        --------------------------------
+        
+        The easiest way to install Postgres is to use homebrew. You can find more information about it here: http://mxcl.github.com/homebrew/
+        
+        Once, you have homebrew installed, Postgres installation is as easy as:
+        
+        	brew install postgres
+        
         
         Development Installation
         ------------------------

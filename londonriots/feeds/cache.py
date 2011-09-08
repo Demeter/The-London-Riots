@@ -38,10 +38,6 @@ class ArticleCache(object):
         with closing(shelve.open(self.article_store_path)) as store:
             return item in store
 
-    def fetch_article(self, entry):
-
-        return article
-
     def __call__(self, feed):
         for entry in feed.entries:
             if entry.link in self:
