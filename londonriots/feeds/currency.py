@@ -4,7 +4,9 @@ import requests
 import BeautifulSoup as bs
 from decimal import Decimal
 from datetime import datetime
-from londonriots.models import TradeRate
+from londonriots.models import TradeRate, Article
+import feedparser
+import pprint
 
 def extract_sibling(table_headers, tag):
     return ((th for th in table_headers
@@ -31,3 +33,11 @@ def PriceFromYahooPage(currency_pair, page):
         price = Decimal(extract_sibling(thh, "Last Trade"))
         date = datetime.now()
         return TradeRate(currency_pair, date, price)
+
+def FetchArticles(currency_pair):
+    url = currency_pair.article_feed
+    articles = feedparser.parse(url)
+    for entry in articles['entries']:
+        link = entry['link']
+        body = requests.get(link).content
+        yield Article(currency_pair, entry['link'], entry['updated'], body)

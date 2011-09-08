@@ -56,6 +56,12 @@ class Article(Base):
     effective_date = Column(DateTime, nullable=False)
     source_text = Column(Text(), nullable=False)
 
+    def __init__(self, currency_pair, url, effective_date, source_text):
+        self.currency_pair = currency_pair
+        self.url = url
+        self.effective_date = effective_date
+        self.source_text = source_text
+
 class LRRoot(object):
     __name__ = None
     __parent__ = None
