@@ -24,6 +24,7 @@ londonriots/scripts/article_history.py
 londonriots/scripts/environ.py
 londonriots/scripts/load_currency_pairs.py
 londonriots/scripts/pginit.py
+londonriots/scripts/tag_article.py
 londonriots/scripts/trade_history.py
 londonriots/static/favicon.ico
 londonriots/static/footerbg.png
