@@ -62,6 +62,19 @@ class Article(Base):
         self.effective_date = effective_date
         self.source_text = source_text
 
+class TaggedWord(Base):
+    __tablename__ = "taggedword"
+    __table_args__ = (UniqueConstraint("word", "pos", name="unique_word_pos"),)
+
+    id = Column(Integer, primary_key=True)
+
+    word = Column(Unicode(), nullable=False)
+    pos = Column(Unicode(), nullable=False)
+
+    def __init__(self, word, pos):
+        self.word = word
+        self.pos = pos
+
 class LRRoot(object):
     __name__ = None
     __parent__ = None
