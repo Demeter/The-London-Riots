@@ -11,10 +11,13 @@ from sqlalchemy.orm.exc import NoResultFound
 
 
 def extract_sibling(table_headers, tag):
-    return ((th for th in table_headers
-             if th.text.startswith(unicode(tag)))
-            .next()
-            .nextSibling()[-1].text)
+    try:
+        return ((th for th in table_headers
+                 if th.text.startswith(unicode(tag)))
+                .next()
+                .nextSibling()[-1].text)
+    except StopIteration:
+        raise KeyError(tag)
 
 url_template = "http://finance.yahoo.com/q?s=%(source)s%(target)s=X"
 time_format = "%a, %d %b %Y %H:%M:%S %Z"
@@ -47,6 +50,6 @@ def FetchArticles(currency_pair):
             continue
         except NoResultFound:
             pass
-        body = requests.get(link).content.decode("utf-8")
+        body = requests.get(link).content.decode("utf-8", "replace")
         effective_date = datetime(*entry.updated_parsed[:6])
         yield Article(currency_pair, entry['link'], effective_date, body)
