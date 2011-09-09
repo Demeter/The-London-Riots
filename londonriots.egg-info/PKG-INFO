@@ -122,6 +122,11 @@ Description: ======================
         
         	./dev.env/bin/python setup.py develop
         
+        Running The Tests
+        -----------------
+        
+        	./dev.en/bin/python setup.py test
+        
         
         0.1
         ---

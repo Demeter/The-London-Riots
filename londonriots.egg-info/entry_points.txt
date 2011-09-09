@@ -2,6 +2,6 @@
 main = londonriots:main
 
 [console_scripts]
-fetch_articles = londonriots.scripts.fetch_articles:main
+load_currency_pairs = londonriots.scripts.load_currency_pairs:main
 pginit = londonriots.scripts.pginit:main
 

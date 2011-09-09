@@ -47,7 +47,7 @@ setup(name='londonriots',
       test_suite="londonriots",
       entry_points = {"paste.app_factory": ["main = londonriots:main"],
                       "console_scripts": ["pginit = londonriots.scripts.pginit:main",
-                                          "fetch_articles = londonriots.scripts.fetch_articles:main"]},
+                                          "load_currency_pairs = londonriots.scripts.load_currency_pairs:main"]},
       paster_plugins=['pyramid'],
       )
 
