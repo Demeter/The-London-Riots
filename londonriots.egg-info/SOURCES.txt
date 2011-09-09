@@ -22,6 +22,7 @@ londonriots/scripts/__init__.py
 londonriots/scripts/environ.py
 londonriots/scripts/load_currency_pairs.py
 londonriots/scripts/pginit.py
+londonriots/scripts/trade_history.py
 londonriots/static/favicon.ico
 londonriots/static/footerbg.png
 londonriots/static/headerbg.png

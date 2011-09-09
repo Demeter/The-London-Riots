@@ -2,6 +2,7 @@
 main = londonriots:main
 
 [console_scripts]
+trade_history = londonriots.scripts.trade_history:main
 load_currency_pairs = londonriots.scripts.load_currency_pairs:main
 pginit = londonriots.scripts.pginit:main
 
