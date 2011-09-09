@@ -1,6 +1,7 @@
 CHANGES.txt
 MANIFEST.in
 README.txt
+article_history.txt
 development.ini
 production.ini
 setup.cfg
@@ -19,6 +20,7 @@ londonriots.egg-info/top_level.txt
 londonriots/feeds/__init__.py
 londonriots/feeds/currency.py
 londonriots/scripts/__init__.py
+londonriots/scripts/article_history.py
 londonriots/scripts/environ.py
 londonriots/scripts/load_currency_pairs.py
 londonriots/scripts/pginit.py

@@ -4,9 +4,11 @@ import requests
 import BeautifulSoup as bs
 from decimal import Decimal
 from datetime import datetime
-from londonriots.models import TradeRate, Article
+from londonriots.models import TradeRate, Article, DBSession
 import feedparser
 import pprint
+from sqlalchemy.orm.exc import NoResultFound
+
 
 def extract_sibling(table_headers, tag):
     return ((th for th in table_headers
@@ -39,5 +41,12 @@ def FetchArticles(currency_pair):
     articles = feedparser.parse(url)
     for entry in articles['entries']:
         link = entry['link']
-        body = requests.get(link).content
-        yield Article(currency_pair, entry['link'], entry['updated'], body)
+        try:
+            article = DBSession.query(Article).filter(
+                    (Article.url==link)).one()
+            continue
+        except NoResultFound:
+            pass
+        body = requests.get(link).content.decode("utf-8")
+        effective_date = datetime(*entry.updated_parsed[:6])
+        yield Article(currency_pair, entry['link'], effective_date, body)
