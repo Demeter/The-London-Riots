@@ -1,7 +1,6 @@
 CHANGES.txt
 MANIFEST.in
 README.txt
-article_history.txt
 development.ini
 production.ini
 setup.cfg

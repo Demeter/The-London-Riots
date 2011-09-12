@@ -20,3 +20,5 @@ class TestWordTagging(TestLR):
 
     def test_word_tagging(self):
         self.assert_(len(self.article.word_frequencies) > 0)
+        for word_frequency in self.article.word_frequencies:
+            self.assert_(int(word_frequency.frequency) >= 0)
