@@ -5,9 +5,10 @@ import itertools as it
 from sqlalchemy.orm.exc import NoResultFound
 
 def tag_article(article):
-    article.word_frequencies = []
+    for word_frequency in article.word_frequencies:
+        models.DBSession.delete(word_frequency)
     article_text = BeautifulSoup(article.source_text)
-    text = u"".join(p.text for p in article_text.findAll("p"))
+    text = u"".join(p.text for p in article_text.findAll("p") if len(p.findAll('select')) == 0)
     tagged_words = [(w,unicode(p)) for w,p in nltk.pos_tag(nltk.word_tokenize(text)) if w[0].isalpha() and (p[0] in "NV") and (not any(c.isupper() for c in w[1:]))]
     for (word, pos), v in it.groupby(sorted(tagged_words)):
         try:
