@@ -49,6 +49,8 @@ class TradeRate(Base):
 class Article(Base):
     __tablename__ = "article"
 
+    word_frequencies = relationship("WordFrequency", backref="article")
+
     id = Column(Integer, primary_key=True)
     currency_pair_id = Column(Integer, ForeignKey("currencypair.id"), nullable=False)
 
@@ -58,9 +60,9 @@ class Article(Base):
 
     def __init__(self, currency_pair, url, effective_date, source_text):
         self.currency_pair = currency_pair
-        self.url = url
+        self.url = unicode(url)
         self.effective_date = effective_date
-        self.source_text = source_text
+        self.source_text = unicode(source_text)
 
 class TaggedWord(Base):
     __tablename__ = "taggedword"
@@ -72,8 +74,24 @@ class TaggedWord(Base):
     pos = Column(Unicode(), nullable=False)
 
     def __init__(self, word, pos):
+        self.word = unicode(word)
+        self.pos = unicode(pos)
+
+class WordFrequency(Base):
+    __tablename__ = "wordfrequency"
+
+    word = relationship("TaggedWord", backref="frequency")
+
+    id = Column(Integer, primary_key=True)
+
+    word_id = Column(Integer, ForeignKey("taggedword.id"), nullable=False)
+    article_id = Column(Integer, ForeignKey("article.id"), nullable=False)
+    frequency = Column(Integer, nullable=False)
+
+    def __init__(self, article, word, frequency):
+        self.article = article
         self.word = word
-        self.pos = pos
+        self.frequency = frequency
 
 class LRRoot(object):
     __name__ = None
