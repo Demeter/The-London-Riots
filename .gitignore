@@ -33,6 +33,9 @@ Thumbs.db
 .#*
 *#
 
+# Vim swap files
+*.swp
+
 # Virtual Environments
 *.env
 .*cache*
