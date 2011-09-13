@@ -7,6 +7,7 @@ from sqlalchemy.orm.exc import NoResultFound
 def tag_article(article):
     for word_frequency in article.word_frequencies:
         models.DBSession.delete(word_frequency)
+    tagged_words = extract_text(article)
     for (word, pos), v in it.groupby(sorted(tagged_words)):
         try:
             tagged_word =  models.DBSession.query(models.TaggedWord).filter(
@@ -18,7 +19,8 @@ def tag_article(article):
 
 def extract_text(article):
     article_text = BeautifulSoup(article.source_text)
-    text = u". ".join(p.text for p in article_text.findAll("p") if len(p.findAll('select')) == 0)
+    h = it.chain(article_text.findAll("h1"), article_text.findAll("h2"), article_text.findAll("h3"), article_text.findAll("h4")).next()
+    text = u" ".join(p.text for p in h.findAllNext("p"))
     word_tokenize = nltk.word_tokenize(text)
-    tagged_words = [(w,unicode(p)) for w,p in nltk.pos_tag(word_tokenize)] # if w[0].isalpha() and (p[0] in "NV") and (not any(c.isupper() for c in w[1:]))]
+    tagged_words = [(w,unicode(p)) for w,p in nltk.pos_tag(word_tokenize)]
     return tagged_words

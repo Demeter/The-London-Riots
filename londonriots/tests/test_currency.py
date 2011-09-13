@@ -18,11 +18,3 @@ class TestCurrency(TestLR):
 
     def test_currency(self):
         self.assert_(self.tradeprice.effective_date < dt.now())
-
-    def test_fetch_articles(self):
-        for n, article in it.izip(it.count(), currency.FetchArticles(self.currency_pair)):
-            if n > 1:
-                break
-
-            self.assertEqual(article.currency_pair, self.currency_pair)
-            self.assert_(article.source_text)
