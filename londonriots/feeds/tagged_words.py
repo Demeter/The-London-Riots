@@ -1,8 +1,9 @@
 import londonriots.models as models
-from BeautifulSoup import BeautifulSoup
+from BeautifulSoup import BeautifulStoneSoup
 import nltk
 import itertools as it
 from sqlalchemy.orm.exc import NoResultFound
+import htmllib
 
 def tag_article(article):
     for word_frequency in article.word_frequencies:
@@ -18,12 +19,21 @@ def tag_article(article):
         models.WordFrequency(article, tagged_word, len(list(v)))
 
 def extract_text(article):
-    article_text = BeautifulSoup(article.source_text)
+    article_text = BeautifulStoneSoup(article.source_text, convertEntities=BeautifulStoneSoup.HTML_ENTITIES)
     try:
         h = it.chain(article_text.findAll("h1"), article_text.findAll("h2"), article_text.findAll("h3"), article_text.findAll("h4")).next()
     except StopIteration:
         return []
     text = u" ".join(p.text for p in h.findAllNext("p"))
-    word_tokenize = nltk.word_tokenize(text)
-    tagged_words = [(w,unicode(p)) for w,p in nltk.pos_tag(word_tokenize)]
-    return tagged_words
+    sentences =  nltk.sent_tokenize(text)
+    sentences = [nltk.word_tokenize(sent) for sent in sentences]
+    tagged_sentences = [nltk.pos_tag(sent) for sent in sentences]
+    tagged_sentences = [nltk.ne_chunk(sent, binary=True) for sent in tagged_sentences]
+    return tagged_sentences
+
+
+def unescape(s):
+    p = htmllib.HTMLParser(None)
+    p.save_bgn()
+    p.feed(s.encode("iso-8859-1", "replace"))
+    return p.save_end()
