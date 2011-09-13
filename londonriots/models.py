@@ -49,7 +49,7 @@ class TradeRate(Base):
 class Article(Base):
     __tablename__ = "article"
 
-    word_frequencies = relationship("WordFrequency", backref="article")
+    entity_frequencies = relationship("NamedEntityFrequency", backref="article")
 
     id = Column(Integer, primary_key=True)
     currency_pair_id = Column(Integer, ForeignKey("currencypair.id"), nullable=False)
@@ -64,33 +64,30 @@ class Article(Base):
         self.effective_date = effective_date
         self.source_text = unicode(source_text)
 
-class TaggedWord(Base):
-    __tablename__ = "taggedword"
-    __table_args__ = (UniqueConstraint("word", "pos", name="unique_word_pos"),)
+class NamedEntity(Base):
+    __tablename__ = "namedentity"
 
     id = Column(Integer, primary_key=True)
 
-    word = Column(Unicode(), nullable=False)
-    pos = Column(Unicode(), nullable=False)
+    text = Column(Unicode(), nullable=False, unique=True)
 
-    def __init__(self, word, pos):
-        self.word = unicode(word)
-        self.pos = unicode(pos)
+    def __init__(self, text):
+        self.text = unicode(text)
 
-class WordFrequency(Base):
-    __tablename__ = "wordfrequency"
+class NamedEntityFrequency(Base):
+    __tablename__ = "namedentityfrequency"
 
-    word = relationship("TaggedWord", backref="frequency")
+    entity = relationship("NamedEntity", backref="frequency")
 
     id = Column(Integer, primary_key=True)
 
-    word_id = Column(Integer, ForeignKey("taggedword.id"), nullable=False)
+    entity_id = Column(Integer, ForeignKey("namedentity.id"), nullable=False)
     article_id = Column(Integer, ForeignKey("article.id"), nullable=False)
     frequency = Column(Integer, nullable=False)
 
-    def __init__(self, article, word, frequency):
+    def __init__(self, article, entity, frequency):
         self.article = article
-        self.word = word
+        self.entity = entity
         self.frequency = frequency
 
 class LRRoot(object):

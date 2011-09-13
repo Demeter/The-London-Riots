@@ -6,17 +6,16 @@ from sqlalchemy.orm.exc import NoResultFound
 import htmllib
 
 def tag_article(article):
-    for word_frequency in article.word_frequencies:
+    for word_frequency in article.entity_frequencies:
         models.DBSession.delete(word_frequency)
-    tagged_words = extract_text(article)
-    for (word, pos), v in it.groupby(sorted(tagged_words)):
+    named_entities = extract_named_entities(article)
+    for text, matches in it.groupby(sorted(named_entities)):
         try:
-            tagged_word =  models.DBSession.query(models.TaggedWord).filter(
-                    (models.TaggedWord.word == word) &
-                    (models.TaggedWord.pos == pos)).one()
+            named_entity =  models.DBSession.query(models.NamedEntity).filter(
+                    (models.NamedEntity.text == text)).one()
         except NoResultFound:
-            tagged_word = models.TaggedWord(word, pos)
-        models.WordFrequency(article, tagged_word, len(list(v)))
+            named_entity = models.NamedEntity(text)
+        models.NamedEntityFrequency(article, named_entity, len(list(matches)))
 
 def extract_named_entities(article):
     article_text = BeautifulStoneSoup(article.source_text, convertEntities=BeautifulStoneSoup.HTML_ENTITIES)
