@@ -11,14 +11,13 @@ import pprint as pp
 
 def main():
     with environment(sys.argv) as env:
-        for article in models.DBSession.query(models.Article)[:1]:
+        for article in models.DBSession.query(models.Article):
             article = models.DBSession.merge(article)
             print article.url
-            pos = tagged_words.extract_text(article)
-            for p in pos:
-                pp.pprint(p)
-            continue
-
+            named_entities = tagged_words.extract_named_entities(article)
+            print list(named_entities)
+            print
+            
             #tagged_words.tag_article(article)
             #transaction.commit()
 
