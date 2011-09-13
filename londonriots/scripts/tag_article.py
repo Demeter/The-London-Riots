@@ -13,11 +13,7 @@ def main():
     with environment(sys.argv) as env:
         for article in models.DBSession.query(models.Article):
             article = models.DBSession.merge(article)
-            print article.url
-            named_entities = tagged_words.extract_named_entities(article)
-            print list(named_entities)
-            print
             
-            #tagged_words.tag_article(article)
-            #transaction.commit()
+            tagged_words.tag_article(article)
+            transaction.commit()
 
