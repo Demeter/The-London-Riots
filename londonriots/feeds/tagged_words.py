@@ -25,10 +25,10 @@ def extract_named_entities(article):
         return
     text = u" ".join(p.text for p in h.findAllNext("p"))
     sentences =  nltk.sent_tokenize(text)
-    sentences = [nltk.word_tokenize(sent) for sent in sentences]
-    tagged_sentences = [nltk.pos_tag(sent) for sent in sentences]
-    tagged_sentences = [nltk.ne_chunk(sent, binary=True) for sent in tagged_sentences]
-    for sent in tagged_sentences:
-        for pos in sent:
+    tokenized_sentences = [nltk.word_tokenize(sent) for sent in sentences]
+    tagged_sentences = [nltk.pos_tag(sent) for sent in tokenized_sentences]
+    named_entity_chunks = [nltk.ne_chunk(sent, binary=True) for sent in tagged_sentences]
+    for chunk in named_entity_chunks:
+        for pos in chunk:
             if isinstance(pos, tuple): continue
             yield u" ".join((w for (w,p) in pos))
