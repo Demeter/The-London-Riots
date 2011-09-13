@@ -19,7 +19,10 @@ def tag_article(article):
 
 def extract_text(article):
     article_text = BeautifulSoup(article.source_text)
-    h = it.chain(article_text.findAll("h1"), article_text.findAll("h2"), article_text.findAll("h3"), article_text.findAll("h4")).next()
+    try:
+        h = it.chain(article_text.findAll("h1"), article_text.findAll("h2"), article_text.findAll("h3"), article_text.findAll("h4")).next()
+    except StopIteration:
+        return []
     text = u" ".join(p.text for p in h.findAllNext("p"))
     word_tokenize = nltk.word_tokenize(text)
     tagged_words = [(w,unicode(p)) for w,p in nltk.pos_tag(word_tokenize)]
