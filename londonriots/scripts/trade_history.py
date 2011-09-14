@@ -8,8 +8,10 @@ import time
 def main():
     with environment(sys.argv) as env:
         while True:
+            start_time = time.time()
             fetch()
-            time.sleep(30)
+            time_delta = time.time() - start_time
+            time.sleep(30 - time_delta)
 
 def fetch():
     currency_pairs = models.DBSession.query(models.CurrencyPair)
