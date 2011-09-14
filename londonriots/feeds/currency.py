@@ -29,10 +29,6 @@ def CurrencyPriceYahoo(currency_pair):
 
 def PriceFromYahooPage(currency_pair, page):
         dom = bs.BeautifulSoup(page)
-        # with open("%(source)s%(target)s.html" % {"source": self.source,
-            # "target": self.target}, 'w') as f:
-            # f.write(page.content)
-
         thh = dom.findAll("th")
 
         price = Decimal(extract_sibling(thh, "Last Trade"))
