@@ -4,6 +4,7 @@ README.txt
 article_tag.txt
 articles.txt
 development.ini
+londonriots.ini
 production.ini
 setup.cfg
 setup.py

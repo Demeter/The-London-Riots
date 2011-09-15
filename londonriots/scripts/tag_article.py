@@ -14,6 +14,8 @@ def main():
         for article in models.DBSession.query(models.Article):
             article = models.DBSession.merge(article)
             
+            if len(article.entity_frequencies) > 0: continue
+
             tagged_words.tag_article(article)
             transaction.commit()
 
