@@ -14,6 +14,8 @@ class TestAnalEngine(TestLR):
         self.currency_price_at_time = self.article_start_time + self.article_epsilon + dt.timedelta(minutes=5)
         self.currency_price = anal.currency_price_at_time(self.currency_pair, self.currency_price_at_time)
 
+        self.data_point = anal.data_point(self.currency_pair, self.article_start_time + self.article_epsilon, self.article_epsilon, dt.timedelta(minutes=5))
+
     def test_analengine_named_entities(self):
         self.assert_(self.named_entities.count() > 0)
 
@@ -22,3 +24,7 @@ class TestAnalEngine(TestLR):
 
     def test_analengine_has_no_prices(self):
         self.assertRaises(KeyError, lambda: anal.currency_price_at_time(self.currency_pair, dt.datetime(2001, 9, 9)))
+
+    def test_analengine_data_point(self):
+        ne,p = self.data_point
+        self.assert_(len(ne) != 0)
