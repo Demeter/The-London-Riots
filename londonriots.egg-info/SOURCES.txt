@@ -20,6 +20,8 @@ londonriots.egg-info/not-zip-safe
 londonriots.egg-info/paster_plugins.txt
 londonriots.egg-info/requires.txt
 londonriots.egg-info/top_level.txt
+londonriots/analengine/__init__.py
+londonriots/analengine/articles.py
 londonriots/feeds/__init__.py
 londonriots/feeds/currency.py
 londonriots/feeds/tagged_words.py
@@ -44,5 +46,6 @@ londonriots/templates/root.pt
 londonriots/tests/GBPUSD.html
 londonriots/tests/__init__.py
 londonriots/tests/sample_article.html
+londonriots/tests/test_analengine.py
 londonriots/tests/test_currency.py
 londonriots/tests/test_word_tagging.py
