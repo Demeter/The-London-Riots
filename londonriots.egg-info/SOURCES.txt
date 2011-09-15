@@ -21,7 +21,7 @@ londonriots.egg-info/paster_plugins.txt
 londonriots.egg-info/requires.txt
 londonriots.egg-info/top_level.txt
 londonriots/analengine/__init__.py
-londonriots/analengine/articles.py
+londonriots/analengine/epsilon.py
 londonriots/feeds/__init__.py
 londonriots/feeds/currency.py
 londonriots/feeds/tagged_words.py
