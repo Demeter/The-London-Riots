@@ -10,11 +10,13 @@ from paste.deploy import appconfig
 from sqlalchemy import engine_from_config
 session = None
 
+import os
+
 def _initTestingDB():
     global session
     if session: return session
 
-    ini_path = 'development.ini'
+    ini_path = os.environ.get("TEST_INI", 'development.ini')
 
     conf = appconfig('config:' + ini_path, 
             relative_to=".")
