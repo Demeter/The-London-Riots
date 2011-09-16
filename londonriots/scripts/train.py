@@ -32,7 +32,6 @@ def currency_pair_stats(currency_pair):
             count += (1 if same_sign else 0)
             total += 1
         except KeyError:
-            print article.effective_date
             pass
 
     print article.currency_pair.source, article.currency_pair.target
