@@ -50,7 +50,8 @@ setup(name='londonriots',
                                           "load_currency_pairs = londonriots.scripts.load_currency_pairs:main",
                                           "trade_history = londonriots.scripts.trade_history:main",
                                           "article_history = londonriots.scripts.article_history:main",
-                                          "tag_article = londonriots.scripts.tag_article:main"]},
+                                          "tag_article = londonriots.scripts.tag_article:main",
+                                          "train = londonriots.scripts.train:main"]},
       paster_plugins=['pyramid'],
       )
 

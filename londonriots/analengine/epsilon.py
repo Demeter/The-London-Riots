@@ -22,6 +22,7 @@ def currency_price_at_time(currency_pair, time):
 
 def data_point(currency_pair, time, article_epsilon, price_epsilon):
     ne = tuple((n.id, n.text) for n in named_entities_in_time_range(currency_pair, time - article_epsilon, article_epsilon))
+    if not ne: raise KeyError("No named entities found in article.")
     p0 = currency_price_at_time(currency_pair, time)
     p1 = currency_price_at_time(currency_pair, time + price_epsilon)
     return ne,p1-p0

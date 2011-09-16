@@ -1,3 +1,4 @@
+import re
 from londonriots.tests import TestLR
 import datetime as dt
 import londonriots.analengine.epsilon as anal
@@ -22,8 +23,11 @@ class TestAnalEngine(TestLR):
     def test_analengine_currency_price_after_time(self):
         self.assert_(self.currency_price > 0)
 
+    def test_analengine_has_no_articles(self):
+        self.assertRaisesRegexp(KeyError, "No named entities found in article.", lambda: anal.data_point(self.currency_pair, dt.datetime(2011, 9, 11, 20), dt.timedelta(hours=2), dt.timedelta(minutes=5)))
+
     def test_analengine_has_no_prices(self):
-        self.assertRaises(KeyError, lambda: anal.currency_price_at_time(self.currency_pair, dt.datetime(2001, 9, 9)))
+        self.assertRaisesRegexp(KeyError, "No trade information available for that time.", lambda: anal.currency_price_at_time(self.currency_pair, dt.datetime(2001, 9, 9)))
 
     def test_analengine_data_point(self):
         ne,p = self.data_point
