@@ -44,8 +44,8 @@ def currency_pair_stats(currency_pair):
 
 
 def data_point_for_article(article, price_epsilon):
-        article_start_time = article.effective_date
-        currency_pair = article.currency_pair
-        article_epsilon = dt.timedelta(hours=2)
-        data_point = anal.data_point(currency_pair, article_start_time + article_epsilon, article_epsilon, price_epsilon)
-        return data_point
+    article_start_time = article.effective_date
+    currency_pair = article.currency_pair
+    article_epsilon = dt.timedelta(hours=2)
+    data_point = anal.data_point(currency_pair, article_start_time + article_epsilon, article_epsilon, price_epsilon)
+    return data_point
