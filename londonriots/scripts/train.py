@@ -25,22 +25,10 @@ def currency_pair_stats(currency_pair):
             Article.currency_pair == currency_pair):
         try:
             ne, dp = data_point_for_article(article, dt.timedelta(minutes=5))
-            ne2, dp2 = data_point_for_article(article, dt.timedelta(hours=1))
-            s_dp += dp**2
-            s_dp2 += dp2**2
-            same_sign = (dp < 0 and dp2 < 0) or (dp >= 0 and dp2 >= 0)
-            count += (1 if same_sign else 0)
-            total += 1
+
+            print dp, sorted(ne, key=lambda n: n.id)
         except KeyError:
             pass
-
-    print article.currency_pair.source, article.currency_pair.target
-    print "Same direction ratio:", float(count)/total
-    rms_dp = math.sqrt(s_dp/total)
-    rms_dp2 = math.sqrt(s_dp2/total)
-    print "root mean square data point 1:", rms_dp
-    print "root mean square data point 2:", rms_dp2
-    print "root mean square ratio", rms_dp2/rms_dp
 
 
 def data_point_for_article(article, price_epsilon):

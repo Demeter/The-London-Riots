@@ -1,8 +1,6 @@
 CHANGES.txt
 MANIFEST.in
 README.txt
-article_tag.txt
-articles.txt
 development.ini
 londonriots.ini
 production.ini
