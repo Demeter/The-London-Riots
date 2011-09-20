@@ -16,7 +16,7 @@ def main():
                 fetch()
                 transaction.commit()
             except:
-                transaction.rollback()
+                transaction.abort()
                 log.error(tb.format_exc())
 
             models.DBSession.close()
