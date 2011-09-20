@@ -17,6 +17,8 @@ def tag_article(article):
             named_entity = models.NamedEntity(text)
         models.NamedEntityFrequency(article, named_entity, len(list(matches)))
 
+    return article.entity_frequencies
+
 def extract_named_entities(article):
     article_text = BeautifulStoneSoup(article.source_text, convertEntities=BeautifulStoneSoup.HTML_ENTITIES)
     try:

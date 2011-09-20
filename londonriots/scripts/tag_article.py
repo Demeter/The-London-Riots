@@ -27,6 +27,10 @@ def main():
 
 def tag_articles():
     for article in models.DBSession.query(models.Article):
-        if not len(article.entity_frequencies):
-            log.info("Tagging article %s", article.url)
-            tagged_words.tag_article(article)
+        if len(article.entity_frequencies):
+            continue
+
+        log.info("Tagging article %d", article.id)
+        entities = tagged_words.tag_article(article)
+        if not entities.length():
+            log.warn("Article %d had no named entities extracted.", article.id)
