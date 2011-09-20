@@ -4,6 +4,9 @@ import londonriots.models as models
 import londonriots.feeds.currency as currency
 import transaction
 import time
+import logging
+
+log = logging.getLogger(__name__)
 
 def main():
     with environment(sys.argv) as env:
