@@ -15,19 +15,15 @@ log = logging.getLogger(__name__)
 
 def main():
     with environment(sys.argv) as env:
-        while True:
-            log.info("Begin tagging")
-            try:
-                tag_articles()
-                transaction.commit()
-            except:
-                log.error(tb.format_exc())
-                transaction.abort()
+        try:
+            tag_articles()
+            transaction.commit()
+        except:
+            log.error(tb.format_exc())
+            transaction.abort()
 
-            models.DBSession.close()
-            log.info("End tagging")
-
-            time.sleep(30)
+        models.DBSession.close()
+        log.info("End tagging")
 
 def tag_articles():
     for article in models.DBSession.query(models.Article):
