@@ -31,5 +31,4 @@ def tag_articles():
         if not len(article.entity_frequencies):
             tagged_words.tag_article(article)
             transaction.commit()
-
-        models.DBSession.close()
+        models.DBSession.expunge(article)
