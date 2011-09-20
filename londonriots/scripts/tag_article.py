@@ -9,6 +9,7 @@ import nltk
 import londonriots.feeds.tagged_words as tagged_words
 import pprint as pp
 import logging
+import traceback as tb
 
 log = logging.getLogger(__name__)
 
