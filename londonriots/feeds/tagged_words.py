@@ -9,18 +9,16 @@ def tag_article(article):
     for word_frequency in article.entity_frequencies:
         models.DBSession.delete(word_frequency)
     named_entities = extract_named_entities(article)
-    frequencies = []
+
     for text, matches in it.groupby(sorted(named_entities)):
         try:
             named_entity =  models.DBSession.query(models.NamedEntity).filter(
                     (models.NamedEntity.text == text)).one()
         except NoResultFound:
             named_entity = models.NamedEntity(text)
-        frequencies.append(models.NamedEntityFrequency(article, 
-                                                       named_entity,
-                                                       len(list(matches))))
+        models.NamedEntityFrequency(article, named_entity, len(list(matches)))
 
-    return frequencies
+    return article.entity_frequencies
 
 def extract_named_entities(article):
     article_text = BeautifulStoneSoup(article.source_text, convertEntities=BeautifulStoneSoup.HTML_ENTITIES)

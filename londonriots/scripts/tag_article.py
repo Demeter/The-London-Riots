@@ -32,5 +32,5 @@ def tag_articles():
 
         log.info("Tagging article %d", article.id)
         entities = tagged_words.tag_article(article)
-        if not entities.length():
+        if not len(entities):
             log.warn("Article %d had no named entities extracted.", article.id)
