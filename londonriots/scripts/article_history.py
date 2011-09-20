@@ -5,6 +5,7 @@ import londonriots.feeds.currency as currency
 import transaction
 import time
 import logging
+import traceback as tb
 
 log = logging.getLogger(__name__)
 
@@ -16,6 +17,7 @@ def main():
                 transaction.commit()
             except:
                 transaction.rollback()
+                log.error(tb.format_exc())
 
             models.DBSession.close()
             time.sleep(30)
@@ -26,6 +28,6 @@ def fetch():
         currency_pair = models.DBSession.merge(currency_pair)
         articles = currency.FetchArticles(currency_pair)
         for article in articles:
-            log.info("Fetching article %s, effective %s", article.url, article.effective_date)
-
-    transaction.commit()
+            log.info("Fetching article %s, effective %s", 
+                     article.url, 
+                     article.effective_date)
