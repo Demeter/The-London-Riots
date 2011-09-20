@@ -37,4 +37,4 @@ def tag_articles():
                      article.id,
                      article.url)
             open(("article-%d.html" % article.id).encode("utf-8"),
-                 "w").write(article.source_text)
+                 "w").write(article.source_text.encode("utf-8"))
