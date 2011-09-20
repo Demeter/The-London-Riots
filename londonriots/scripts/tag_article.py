@@ -18,7 +18,6 @@ def main():
         while True:
             try:
                 tag_articles()
-                transaction.commit()
             except:
                 log.error(tb.format_exc())
                 transaction.abort()
