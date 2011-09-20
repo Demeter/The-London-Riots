@@ -33,4 +33,4 @@ def tag_articles():
             tagged_words.tag_article(article)
             transaction.commit()
 
-        DBSession.close()
+        models.DBSession.close()
