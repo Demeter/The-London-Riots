@@ -4,11 +4,20 @@ import londonriots.models as models
 import londonriots.feeds.currency as currency
 import transaction
 import time
+import logging
+
+log = logging.getLogger(__name__)
 
 def main():
     with environment(sys.argv) as env:
         while True:
-            fetch()
+            try:
+                fetch()
+                transaction.commit()
+            except:
+                transaction.rollback()
+
+            models.DBSession.close()
             time.sleep(30)
 
 def fetch():
@@ -17,7 +26,6 @@ def fetch():
         currency_pair = models.DBSession.merge(currency_pair)
         articles = currency.FetchArticles(currency_pair)
         for article in articles:
-            print article.url, article.effective_date
-            models.DBSession.flush()
+            log.info("Fetching article %s, effective %s", article.url, article.effective_date)
+
     transaction.commit()
-    print
