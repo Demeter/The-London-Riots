@@ -29,7 +29,7 @@ def fetch():
     currency_pairs = models.DBSession.query(models.CurrencyPair)
     for currency_pair in currency_pairs:
         price = currency.CurrencyPriceYahoo(currency_pair)
-        log.info("Fetched %s -> %s: %s at %d",
+        log.info("Fetched %s -> %s: %s at %s",
                  currency_pair.source,
                  currency_pair.target, 
                  price.rate, 
