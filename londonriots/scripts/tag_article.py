@@ -29,6 +29,7 @@ def tag_articles():
     for article in models.DBSession.query(models.Article):
         article = models.DBSession.merge(article)
         if not len(article.entity_frequencies):
+            log.info("Tagging article %s", article.url)
             tagged_words.tag_article(article)
             models.DBSession.flush()
         models.DBSession.expunge(article)
