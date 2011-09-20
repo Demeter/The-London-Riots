@@ -23,7 +23,9 @@ def main():
             models.DBSession.close()
 
             time_delta = time.time() - start_time
-            time.sleep(30 - time_delta)
+
+            if time_delta > 0:
+                time.sleep(30 - time_delta)
 
 def fetch():
     currency_pairs = models.DBSession.query(models.CurrencyPair)
