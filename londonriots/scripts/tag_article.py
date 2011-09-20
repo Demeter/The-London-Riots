@@ -36,4 +36,5 @@ def tag_articles():
             log.warn("Article %d had no named entities extracted (%s).", 
                      article.id,
                      article.url)
-            open("article-%d.html" % article.id, "w").write(article.source_text)
+            open(("article-%d.html" % article.id).encode("utf-8"),
+                 "w").write(article.source_text)
