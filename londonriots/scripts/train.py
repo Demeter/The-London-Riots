@@ -13,20 +13,22 @@ import sys
 def main():
     with environment(sys.argv) as env:
         for currency_pair in DBSession.query(CurrencyPair):
-            currency_pair_stats(currency_pair)
-            print
+            print currency_pair.source, currency_pair.target
+            with open("%s-%s.txt" % (currency_pair.source, currency_pair.target), "w") as outfile:
+                currency_pair_stats(outfile, currency_pair)
 
-def currency_pair_stats(currency_pair):
-    count = 0
-    total = 0
-    s_dp = 0
-    s_dp2 = 0
-    for article in DBSession.query(Article).filter(
-            Article.currency_pair == currency_pair):
+def currency_pair_stats(outfile, currency_pair):
+    old_nes = set()
+    for article in DBSession.query(Article).filter(Article.currency_pair == currency_pair):
         try:
             ne, dp = data_point_for_article(article, dt.timedelta(minutes=5))
 
-            print dp, sorted(ne, key=lambda n: n.id)
+            ne = tuple(sorted(id for id, name in ne))
+            if ne in old_nes:
+                continue
+            old_nes.add(ne) 
+            outfile.write("%s %s\n" % (dp, " ".join(("%d:1" % id for id in ne))))
+
         except KeyError:
             pass
 
@@ -34,6 +36,6 @@ def currency_pair_stats(currency_pair):
 def data_point_for_article(article, price_epsilon):
     article_start_time = article.effective_date
     currency_pair = article.currency_pair
-    article_epsilon = dt.timedelta(hours=2)
+    article_epsilon = dt.timedelta(hours=1)
     data_point = anal.data_point(currency_pair, article_start_time + article_epsilon, article_epsilon, price_epsilon)
     return data_point
