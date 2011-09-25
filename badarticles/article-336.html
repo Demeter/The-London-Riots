@@ -1,0 +1,1507 @@
+<!-- include virtual="/includes/BanIPS.asp" -->
+<!--log county= EU--><!-- Storylang = EN--><!-- Storylang = 2--><!-- Storylang1 = EN-->
+<script language='javascript'>window.focus()</script>
+<!-- TOP -->
+
+
+
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en"
+"http://www.w3.org/tr/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>
+Euro Strikes 10-Year Low against Yen as Crisis Worsens</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<meta name="keywords" content="Euro Strikes 10-Year Low against Yen as Crisis Worsens">
+<meta name="description" content="menafn: The worsening situation in the Eurozone sent the common currency on a nosedive against the safe haven Japanese Yen, striking a 10-year low, to fall below key technical levels as well as option...">
+
+<link rel="alternate" type="application/rss+xml" title="middle east north africa financial network" href="../rss/menafn_menatopstories.xml" />
+<link rel="shortcut icon" href="http://www.menafn.com/favicon.ico">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta id="robots" content="index, follow" name="robots">
+
+<meta name="revisit-after" content="1 days">
+<meta name="rating" content="general">
+<meta name="y_key" content="63f5d0c14b50c6c7" />
+<link href="/ss1.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://www.menafn.com/favicon.ico">
+<base target="_self">
+<script type="text/javascript" src="/includes/scripts/prototype.js"></script>
+<script type='text/javascript' src="/includes/scripts/scriptaculous.js?load=effects"></script>
+<script type='text/javascript' src="/includes/scripts/prototip.js"></script>
+<script language='javascript' src='/includes/scripts/inc_top.js'></script>
+<script language='javascript' src='/includes/scripts/dropmenu.js'></script>
+<script language='javascript' src='/includes/scripts/menaallpagesajax.js'></script>
+<!--<script src="/includes/scripts/curvycorners.js" ></script>-->
+<link rel="stylesheet" type="text/css" href="/includes/styles/menafn_new.css">
+<link rel="stylesheet" type="text/css" href="/includes/styles/saxsobankpage.css">
+<link rel="stylesheet" type="text/css" href="/includes/styles/menafnlayout.css">
+<link rel="stylesheet" type="text/css"  href="/includes/styles/pager.css">
+<link rel="stylesheet" type="text/css" href="/includes/styles/mostpopularstories.css">
+<link rel="stylesheet" type="text/css" href="/includes/styles/weatherpage.css">
+<link rel="stylesheet" type="text/css" href="/includes/styles/MenafnShared.css">
+
+<script language='javascript'>
+var m_reff=""
+var armena=new Array("quotes/news","detailed quote","stock charts")
+var arus=new Array("quotes/news","detailed quote","stock charts","earnings")
+var armenav=new Array("qn_quotes_news","qn_digest","qn_charts")
+var arusv=new Array("qn_quotes_news","qn_digest","qn_earnings","qn_charts","qn_ipo")
+
+function reJoin()
+{
+if (document.forma.Email.value > "")
+{
+        
+    document.forma.action = "/nl_sub.asp"
+    document.forma.submit();
+    
+    if (getQueryVariable("hhyy") > "")
+    {
+        document.forma.action = "/qn_news_story_changes.asp?StoryId=" + getQueryVariable("StoryId") + "&Newsletter=" + document.forma.NewsLetter_Email.value
+        document.forma.submit();
+    }
+}
+
+}
+
+function redir()
+    {
+     var symbol =  document.getElementById("Symbol").value 
+    if (symbol > "")
+    {   
+        document.forma.action="/qn_quotes_news"+m_reff+".asp?ContType=Symbol" + "&Symbol="+symbol
+        document.forma.submit();
+    
+    }
+    else
+    { alert("Please enter a Name/Symbol value. ")
+    }
+}
+function fregion(m_n)
+{
+if (m_n=="mena")
+    {m_reff="_r"}
+else {m_reff=""}
+
+}
+
+function getKey()
+{
+        if (event.keyCode == 13)
+        {
+            event.keyCode = 0;
+        }
+}
+
+function hredir()
+{
+if (document.forma.q.value > "")
+{
+//document.forma.action="/qn_mena_headlines.asp?type=Keyword&title="+document.forma.queryn.value.replace('&','%26')+"&Query="+document.forma.queryn.value
+document.forma.action="/MenaGoogleSearch.asp?cx=partner-pub-1786942026589567%3Asao396-3ere&cof=FORID%3A10&ie=ISO-8859-1&q="+document.forma.q.value+"&sa=Search#1141"
+document.forma.submit()
+}
+    else
+{ alert("Please enter a search value. ")
+}
+}
+
+function sizeUp() {
+  if (document.getElementById) {
+    document.getElementById("CurrentSize").value = parseInt(document.getElementById("CurrentSize").value)  + 1 ;
+    document.getElementById("resizeableText").style.cssText = "text-align: justify;font-size:"+document.getElementById("CurrentSize").value+"px";
+  }
+}
+
+function sizeDown() {
+  if (document.getElementById) {
+    document.getElementById("CurrentSize").value = parseInt(document.getElementById("CurrentSize").value)  - 1 ;
+    document.getElementById("resizeableText").style.cssText = "text-align: justify;font-size:"+document.getElementById("CurrentSize").value+"px";
+  }
+}
+
+function resetCurrentsize() {
+  document.getElementById("CurrentSize").value = 13;
+  document.getElementById("resizeableText").style.cssText = "text-align: justify;font-size:"+document.getElementById("CurrentSize").value+"px";
+}
+
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  } 
+  return '';
+}
+function fetchStock(){
+var stock= $("Symbol").value;
+
+if ( stock.length > 0){
+        var market  = document.getElementsByName("region");//document.forma.region;
+        var marketvalue =getCheckedValue(market);
+        if (marketvalue == "MENA"){
+            document.forma.action="mena_stocks_all.asp?Symbol=" + stock;
+            document.forma.submit();
+        } else if (marketvalue == "US"){
+            document.forma.action="global_stocks_all.asp?Symbol=" + stock;
+            document.forma.submit();
+        } else {
+             alert("Please Select Region ")
+        }
+}
+else{
+     alert("Please enter a Name/Symbol value. ")
+    }
+}
+// return the value of the radio button that is checked
+// return an empty string if none are checked, or
+// there are no radio buttons
+function getCheckedValue(radioObj) {
+    if(!radioObj)
+        return "";
+    var radioLength = radioObj.length;
+    if(radioLength == undefined)
+        if(radioObj.checked)
+            return radioObj.value;
+        else
+            return "";
+    for(var i = 0; i < radioLength; i++) {
+        if(radioObj[i].checked) {
+            return radioObj[i].value;
+        }
+    }
+    return "";
+}
+
+// set the radio button with the given value as being checked
+// do nothing if there are no radio buttons
+// if the given value does not exist, all the radio buttons
+// are reset to unchecked
+function setCheckedValue(radioObj, newValue) {
+    if(!radioObj)
+        return;
+    var radioLength = radioObj.length;
+    if(radioLength == undefined) {
+        radioObj.checked = (radioObj.value == newValue.toString());
+        return;
+    }
+    for(var i = 0; i < radioLength; i++) {
+        radioObj[i].checked = false;
+        if(radioObj[i].value == newValue.toString()) {
+            radioObj[i].checked = true;
+        }
+    }
+}
+
+
+
+</script>
+<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-16158535-1']);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
+</head>
+<!-- Here -->
+<body onLoad="initialiseMenu();"  align="center" style="text-align:center;margin-right: auto;margin-left: auto; margin-top:0px; margin-bottom:0px"   bgcolor="#FFFFFF" marginheight="0">
+<div style="margin: 0 auto;width: 1000px">
+<form method="POST" name='forma' ID="Form1">
+
+
+<table width="1000px" cellpadding="0" border="0" cellspacing="0" >
+  <tr>
+    <td background="/images/shared_images/tb_top_blue_line.gif" height="4"><img border="0" src="/images/shared_images/tb_top_blue_line.gif"></td>
+  </tr>
+  <tr>
+    <td><table border="0" width="1000px" id="table2" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="20" align="left"><a href="http://www.menafn.com"> <img border="0" src="/images/shared_images/tb_sm_logo.gif" width="177" height="15" hspace="4" vspace="4" alt="Middle East North Africa - Financial Network"></a></td>
+          <td><p align="right"> <img border="0" src="/images/shared_images/tb_demand_more.gif" width="122" height="14" alt="Demand More is a registered trade mark of MENAFN.COM"></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td background="/images/shared_images/tb_top_blue_line.gif" height="4"><img border="0" src="/images/shared_images/tb_top_blue_line.gif"></td>
+  </tr>
+  <tr>
+    <td><table border="0" width="1000px" id="table3" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;
+            
+								<script language="javascript">
+					c_date=new Date()
+											c_utc=c_date.toUTCString()
+											c_tmp=Date.parse(c_utc)
+											c_tmp1=Date.parse("Tue, 13 Sep 2011 22:45:04 UTC")
+											date_diff=c_tmp-c_tmp1
+											//mdate=new Date()
+											//m_date=mdate.toUTCString
+											//m_date=Date.parse(m_date)
+												m_date=new Date(c_tmp+date_diff)
+												m_str=m_date.toUTCString();
+												document.write(''+m_str.substring(0,m_str.length-7)+' GMT')
+								</script>
+		
+          </td>
+          <td><script language='javascript'>
+function gl_weather(){
+	weath_url="/weather_act.asp?region=gl";	
+	window.open(weath_url,"weather","width=600,height=700,status=no,location=no,toolbar=no,resizable=no,scrollbars=no").focus();
+}
+</script>
+
+<ul id="mainmenu" >
+  <li><a class='tbtop' href='http://www.menafn.com'>Home</a></li>
+  <li>
+    <div style="position:absolute;  padding-top: 27px; display:none;z-index:1000">
+      <table border='0' cellpadding='0' cellspacing='0' width='110' ID="Table1">
+        <tr>
+          <td colspan='4' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td valign='top'><img src='/images/inc_images/top_corner.gif' width='4' height='3'></td>
+          <td valign='top' class='bgGrayTop'><img src='/images/inc_images/bg_white.gif' width='1' height='3'></td>
+          <td class='bgWhite'  valign='middle' width='100%'><a href="/qn_news_sections.asp?src=s" class='bgGrayTopSub'>News by Industry</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap><a href="/qn_news_sections.asp?src=c" class='bgGrayTopSub'>News By Country</a></td>
+          <td valign='middle' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+          <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap><a href="/qn_news_sections.asp?src=m" class='bgGrayTopSub'>News from Marketwatch </a></td>
+          <td valign='middle' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+      </table>
+    </div>
+    <a class='tbtop' href='/qn_news_sections.asp'>MENAFN News</a> </li>
+  <li>
+    <div style="position:absolute;  padding-top: 27px; display:none;z-index:1000;">
+      <table border='0' cellpadding='0' cellspacing='0' width='110' ID="Table4">
+        <tr>
+          <td colspan='4' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td valign='top'><img src='/images/inc_images/top_corner.gif' width='4' height='3'></td>
+          <td valign='top' class='bgGrayTop'><img src='/images/inc_images/bg_white.gif' width='1' height='3'></td>
+          <td class='bgWhite' width='104'><ul>
+              <li> <a href="/qn_market.asp" class='bgGrayTopSub'>Equity Markets</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div style='position:absolute; display:none; left:100;  width:104;z-index:1000'>
+                  <table border='0' cellpadding='0' cellspacing='0' width='104'>
+                    <tr>
+                      <td colspan='4' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+                    </tr>
+                    <tr>
+                      <td valign='top'><img src='/images/inc_images/top_corner.gif' width='4' height='3'></td>
+                      <td valign='top' class='bgGrayTop'><img src='/images/inc_images/bg_white.gif' width='1' height='3'></td>
+                      <td class='bgWhite' width='100%' valign='middle' nowrap><a href="/qn_market.asp" class='bgGrayTopSub'>Market Indices</a></td>
+                      <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td colspan='3' width='100%' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+                      <td class='bgWhite' width='100%' valign='middle' nowrap><a href="qn_quotes_charts.asp" class='bgGrayTopSub'>Quotes & Charts</a></td>
+                      <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td colspan='3' width='100%' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+            </ul></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/qn_currencies.asp" class='bgGrayTopSub'>FX & Money Markets</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite'  valign='middle' nowrap><a href="qn_commodities_r.asp" class='bgGrayTopSub'>Commodities</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/qn_energy_r.asp" class='bgGrayTopSub'>Oil & Energy</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+      </table>
+    </div>
+    <a class='tbtop' href='/qn_market.asp'>Market Data</a> </li>
+  <li>
+    <div style="position:absolute;  padding-top: 27px; display:none;z-index:1000;">
+      <table border='0' cellpadding='0' cellspacing='0' width='110' ID="Table2">
+        <tr>
+          <td colspan='4' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td valign='top'><img src='/images/inc_images/top_corner.gif' width='4' height='3'></td>
+          <td valign='top' class='bgGrayTop'><img src='/images/inc_images/bg_white.gif' width='1' height='3'></td>
+          <td class='bgWhite' valign='middle' width='100%'><a href="/research" class='bgGrayTopSub'>MENAFN Research</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/rc_research.asp" class='bgGrayTopSub'>Regional Research</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+      </table>
+    </div>
+    <a class='tbtop' href='#top'>Research</a> </li>
+  <li>
+    <div style="position:absolute;  padding-top: 27px; display:none;z-index:1000;">
+      <table border='0' cellpadding='0' cellspacing='0' width='110' ID="Table3">
+        <tr>
+          <td colspan='4' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td valign='top'><img src='/images/inc_images/top_corner.gif' width='4' height='3'></td>
+          <td valign='top' class='bgGrayTop'><img src='/images/inc_images/bg_white.gif' width='1' height='3'></td>
+          <td class='bgWhite' width='100%' valign='middle'>
+          <!--<a href="javascript:void(0);" onclick='gl_weather()' class='bgGrayTopSub'>Weather</a>-->
+          <a href="http://www.menafn.com/qn_weather.asp" class='bgGrayTopSub'>Weather</a>
+          </td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td valign='top' class='bgGrayTop'><img src='/images/inc_images/bg_white.gif' width='1' height='3'></td>
+          <td class='bgWhite' width='100%' valign='middle'><a href="/travel.asp" class='bgGrayTopSub'>Travel</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+         <tr>
+          <td></td>
+          <td valign='top' class='bgGrayTop'><img src='/images/inc_images/bg_white.gif' width='1' height='3'></td>
+          <td class='bgWhite' width='100%' valign='middle'><a href="/events/" class='bgGrayTopSub'>Events</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/my_portf_valua.asp" class='bgGrayTopSub'>Portfolio Tracker</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'5></td>
+        </tr>
+         <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/RealEstate/" class='bgGrayTopSub'>Real Estate</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'5></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/tl_calculators.asp" class='bgGrayTopSub'>Calculators</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/snap/ic/ic_login.asp" class='bgGrayTopSub'>Investment Game</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/vo_center.asp" class='bgGrayTopSub'>Voting</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/Glossary/bfglosa.asp" class='bgGrayTopSub'>Financial Glossary</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+             <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+          <td class='bgWhite' nowrap valign='middle'><a href="/qn_calendar.asp" class='bgGrayTopSub'>Economic Calendar</a></td>
+          <td class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='15'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan='3' class='bgGrayTop'><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td>
+        </tr>
+      </table>
+    </div>
+    <a class='tbtop' href='#top'>Tools</a> </li>
+  <li><a class='tbtop' href='/research/research_login.asp?type=payment'>Cart</a></li>
+  <li><a class='tbtop' href='/arabic/index.asp'><img src="/images/shared_images/ArabiChange.gif" border =0>&nbsp;</a></li>
+</ul>
+
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td><img src='/images/inc_images/img_trnsp.gif' width='1' height='10'></td>
+  </tr>
+  <tr>
+    <td height="21"><table border="0" width="1000" id="Table7" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align=center  ><div id="topheaderbanners">
+            <!--log county= EU--><!-- log name='calling' banner_inc='30' layout='topl' country=EU ip='209.134.7.66' --><!-- log name='campaign' value='712' layout='topl' page='/qn_news_story_s.asp'--><!-- log banner=893 activeBanners=893,  --><script type="text/javascript"><!--
+google_ad_client = "pub-1786942026589567";
+/* Leader Board 728x90 - image */
+google_ad_slot = "9045578707";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><!--log name='err' value='Object variable not set' Source='Microsoft VBScript runtime error' Number='91'-->
+          </div></td>
+        </tr>
+        <tr>
+          <td><img src='/images/inc_images/img_trnsp.gif' width='1' height='5'></td>
+        </tr>
+      </table>
+
+      <table border="0" width="1000px" id="table11" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="40%">&nbsp;</td>
+          <td width="70%" align="right"><table border="0" width="100%" id="table12" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center"><div id="coolmenu"><a href="/my_login.asp">My MENAFN</a></div></td>
+                <td width="1"><img src='/images/inc_images/img_trnsp.gif' width='2' height='1'></td>
+                <td align="center"><div id="coolmenu"><a href="/qn_currencies.asp?currency=cross">Currencies</a></div></td>
+                <td width="1"><img src='/images/inc_images/img_trnsp.gif' width='2' height='1'></td>
+                <td align="center"><div id="coolmenu">
+                <a href="http://www.menafn.com/qn_weather.asp">Weather</a>
+                <!--a href='javascript:void(0);'onClick='javascript:window.open("/weather_act.asp?region=gl&region_id=12","weather","width=600,height=700,status=no,location=no,toolbar=no,resizable=no,scrollbars=no").focus();'>Weather</a-->
+                </div></td>
+                <td width="1"><img src='/images/inc_images/img_trnsp.gif' width='2' height='1'></td>
+                <!--<td align="center"><div id="coolmenu"><a href="/menafnmobile.asp">MOBILE</a></div></td>-->
+                <td width="1"><img src='/images/inc_images/img_trnsp.gif' width='2' height='1'></td>
+                <td align="center"><div id="coolmenu"><a href="/cm">Corporate Monitor</a></div></td>
+                <td width="1"><img src='/images/inc_images/img_trnsp.gif' width='2' height='1'></td>
+                <td align="center"><div id="coolmenu"><a href="/rss/index.asp">RSS <span style="text-decoration: blink; background-color: #ff9966">XML</span></a></div></td>
+                <td width="1"><img src='/images/inc_images/img_trnsp.gif' width='2' height='1'></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td background="/images/shared_images/tb_top_tab_line.gif"><img border="0" src="/images/shared_images/tb_top_tab_line.gif" width="1" height="5"></td>
+  </tr>
+  <tr>
+    <td background="/images/shared_images/tb_top_grad_line.gif"><table border="0" width="1000" id="Table1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="left" valign=middle><img border="0" src="/images/shared_images/tb_top_grad_line.gif" width="1" height="28" align="left">
+            <table ID="Table10">
+              <tr>
+              
+              <td>&nbsp;&nbsp;<b>Quotes:</b> </td>
+                <td><input type="radio" name="region" value="US"  onClick="fregion('us')" ID="regionUS"></td>
+                <td>US</td>
+                <td><input type="radio" name="region" value="MENA" onClick="fregion('mena')" ID="regionMena"></td>
+                <td>MENA</td>
+                <td nowrap >&nbsp;&nbsp;Enter Symbol:</td>
+                <td><input type="text" size="15" id="symbol" name="Symbol"></td>
+                <td align='left'><a href="javascript:fetchStock()" ><img src="/images/shared_images/Gobtn_NT.gif"  hspace='2'  border="0"></a></td>
+                <td width="90px" align =right ><b>NewsLetter:</b> </td>
+                <td><input type="text" size="19" name="Email" ID="Text5" value = "email" style="background-color:white;"></td>
+                <td align='left'><a href="javascript:reJoin()" ><img src="/images/shared_images/JoinBtn_NT.gif"  hspace='2'  border="0"></a></td>
+                <td width="40px" align =right nowrap  ><b>Search:</b> </td>
+                <td colspan="3" height="10px">
+
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+
+   <!-- <form style="display:inline; " action="http://www.menafn.com/MenaGoogleSearch.asp" id="cse-search-box-1">-->
+    
+        <input type="hidden" name="cx" value="partner-pub-1786942026589567:sao396-3ere" />
+        <input type="hidden" name="cof" value="FORID:10" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="25" />
+        <input type="button" name="sa" value="Search" onclick="javascript:hredir();" />
+		 					<!--<img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" align="absmiddle" />-->
+  
+      
+     <!--</form>-->
+ 
+
+
+ 
+
+
+</td><!--<input type="text" size="26" name="queryn"></td>
+                <td align='left'><!--<a href="javascript:hredir()" ><img src="/images/shared_images/SearchBtn.gif"  hspace='2'  border="0"></a></td>-->
+                <td><a href= "/advanced_search_main.asp" target =_blank ><u>advanced</u></a></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+	</form>
+
+
+<table border='0' bordercolor="red" cellpadding="0" cellspacing="2" height="0" width="1015px" id="DisabledText" >
+<tr>
+  <td><!-- Storylang =EN-->  </td>
+</tr>
+<tr>
+  <td valign='top'><table border='0' cellpadding='0' cellspacing='0' width="100%">
+    <TR>
+      <td valign="top"></td>
+      <!-- TITLE -->
+      <style type="text/css">
+H1.storytitle {FONT-WEIGHT: normal;FONT-SIZE: 24px;
+margin:0; padding:1px 0 0 0;width:100%
+}
+</style>
+
+
+      <td align="left" valign='top'><table border='0' cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+        <tr>
+          <td><table border="0"  cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+            <!-- CONTENT TR-->
+            <tr>
+              <td align='center' valign='top'><!-- start of the first column  -- ><!-- CONTENT -->
+                <table border='0' width='100%' ID="Table5" style="border-collapse:collapse">
+                  <tr>
+                    
+                    <td align="left" valign='top'><table border='0' cellpadding='0' cellspacing='0' width='100%'><tr><td><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td></tr><tr><td class='pageTitle' valign='middle'><h1 class='storytitle'>Euro Strikes 10-Year Low against Yen as Crisis Worsens&nbsp;<A href='http://www.menafn.com/rss/Menafn_MostaPopular_Local_en.xml' target='_blank'><IMG alt='' src='../images/rss/feed_icon_16x16.gif'  border='0' /></A> <A href='/nl_sub.asp' target='_blank' title='Join our daily free Newsletter'><IMG alt='Join our daily free Newsletter' src='../images/shared_images/join_nl.jpg'  border='0' /></A></h1></td></tr><tr><td><img src='/images/inc_images/img_trnsp.gif' width='1' height='1'></td></tr></table>
+                    <span style="margin-left:2px">
+                        MENAFN - Daily Forex
+                                  - Sep 12 2011</span><br><br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><table border='0' cellpadding='0' cellspacing='0' width='100%' ID="Table2">
+                        <tr>
+                          <td valign='top'><table border='0' cellpadding='0' cellspacing='0' width='100%' ID="Table3">
+                          <tr><td colspan="2">  <DIV class="dots"></DIV></td></tr>
+                              <tr>
+                                <td>
+                            
+                                   
+ <div>
+ <Div style="display:inline; width:130px;  font-size:12px;font-weight:bold; height:18px">No. of Ratings : 0</div>
+ <div style="display:inline">
+  <script language='javascript' src='/includes/scripts/stars.js'></script>
+  <script type="text/javascript">
+        var s2 = new Stars({
+        maxRating: 5,
+        imagePath: 'images/rating/',
+        callback: SetRate,
+        value:0,
+        locked:false
+        });
+  function SetRate(Val){
+      alert('You rated it ' + Val + ' star(s)!');
+        s2.locked = true;
+        var tdID = "Ratings"
+        var includefile = "includes/Rate.asp";
+        var UpdateMe = new Ajax.Updater(tdID, includefile, 
+            {method: "POST",
+            parameters: {rating: Val, sid:1093440938},
+            evalScripts:true,
+            onFailure: function () {},
+            onSuccess: function () {}            
+            });
+         //$(tdID).innerHTML= holdstr;
+    }       
+</script>
+</div>
+<Div style="display:inline;font-size:12px;font-weight:bold; height:18px"> &nbsp;&nbsp;&nbsp;</Div>
+</div> <span id="Ratings"></span>
+                                  
+                                  </td>
+                                <td align="right">
+                                
+<div class="bookmarks"> <a class="BoxLinks" href="http://digg.com/submit?phase=2&bodytext=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens&title=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens&url=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938"
+                    target="_blank"><img class="BoxButtons" alt="Digg This Article: Euro Strikes 10-Year Low against Yen as Crisis Worsens" src="/images/gifs/ico_digg.gif" /></a> <a class="BoxLinks" href="http://www.facebook.com/sharer.php?u=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938&title=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens"
+                    target="_blank"><img class="BoxButtons" alt="Share This Article: Euro Strikes 10-Year Low against Yen as Crisis Worsens" src="/images/gifs/ico_Facebook.gif" /></a> <a class="BoxLinks" href="http://del.icio.us/post?v=2&url=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938&title=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens"
+                    target="_blank"><img class="BoxButtons" alt="Add to Delicious" src="/images/gifs/ico_delicious.gif" /></a> <a class="BoxLinks" href="http://www.newsvine.com/_tools/seed?popoff=0&u=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938&h=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens"
+                    target="_blank"><img class="BoxButtons" alt="Seed this article" src="/images/gifs/ico_newsvine.gif" /></a> <a class="BoxLinks" href="http://buzz.yahoo.com/buzz?publisherurn=huffington_post&guid=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938&h=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens"
+                    target="_blank"><img class="BoxButtons" alt="Buzz this article" src="/images/gifs/ico_Buzz.png" /></a> <a class="BoxLinks" href="http://reddit.com/submit?url=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938&title=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens"
+                    target="_blank"><img class="BoxButtons" alt="Add to Reddit" src="/images/gifs/ico_reddit.gif" /></a> <a class="BoxLinks" href="http://www.furl.net/savedialog.jsp?&r=&v=1&c=&p=1&u=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938&t=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens"
+                    target="_blank"><img class="BoxButtons" alt="Add to furl" src="/images/gifs/ico_furl.gif" /></a> <a class="BoxLinks" href="http://www.stumbleupon.com/submit.php?url=http://www.menafn.com/qn_news_story_s.asp?storyid=1093440938&title=Euro+Strikes+10%2DYear+Low+against+Yen+as+Crisis+Worsens"
+                    target="_blank"><img class="BoxButtons" alt="Add to stumbleupon" src="/images/gifs/Ico_stumbleupon.gif" /></a> <a href="http://www.mixx.com/" onclick="window.location='http://www.mixx.com/submit?page_url='+window.location; return false;" class="BoxLinks" target="_blank"><img src="/images/gifs/ico_mixx.png" alt="Add to Mixx!" border="0" class="BoxButtons" /></a></div>
+
+
+                                </td>
+                              </tr>
+                          <tr><td colspan="2">  <DIV class="dots"></DIV></td></tr>
+                              <tr>
+                                <td height='5' colspan='2'><br>
+                                  
+                                  <div id="googleads">
+                                    
+<script type="text/javascript"><!--
+		google_ad_client ="pub-1786942026589567";
+		google_ad_width = 234;
+		google_ad_height = 60;
+		google_ad_format = "234x60_as";
+		google_ad_type = "text_image";
+		google_ad_channel ="9222070685";
+		google_color_border = "FFFFFF";
+		google_color_bg = "FFFFFF";
+		google_color_link = "006699";
+		google_color_url = "006699";
+		google_color_text = "666666";
+	//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+                                  </div>
+                                 
+                                  </td>
+                              </tr>
+                            </table></td>
+                        </tr>
+                        <tr>
+                          <td valign='top'></td>
+                        </tr>
+                      </table>
+                      <table border='0' cellpadding='0' cellspacing='0' width='100%' ID="Table6">
+                        <tr>
+                          <td height='5' colspan='2'>&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td valign='top' class="newsDisp">
+                          <style>
+#article_box {
+    BORDER-RIGHT: #ccc 1px solid;	
+    PADDING-RIGHT: 19px;	
+    BORDER-TOP: #ccc 1px solid;	
+    PADDING-LEFT: 19px;	
+    PADDING-BOTTOM: 19px;	
+    MARGIN: 0px 0px 20px;	
+    OVERFLOW: hidden;	
+    BORDER-LEFT: #ccc 1px solid;	
+    PADDING-TOP: 19px;	
+    BORDER-BOTTOM: #ccc 1px solid
+} 
+#at_narrow_wrapper {
+    FLOAT: right;	
+    MARGIN: 0px 0px 0px 8px;	
+    WIDTH: 133px
+}
+#at_narrow_inner {
+    BORDER-RIGHT: #ccc 2px solid;	
+    PADDING-RIGHT: 6px;	
+    PADDING-LEFT: 6px;	
+    FONT-SIZE: 11px;	
+    PADDING-BOTTOM: 0px;	
+    BORDER-LEFT: #ccc 1px solid;	
+    COLOR: #666;	
+    LINE-HEIGHT: normal;	
+    PADDING-TOP: 0px;	
+    FONT-FAMILY: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+.at_link {
+    PADDING-RIGHT: 0px;	
+    PADDING-LEFT: 0px;	
+    PADDING-BOTTOM: 3px;	
+    PADDING-TOP: 3px;	
+    FONT-FAMILY: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif
+} 
+#at_narrow_inner A {
+    COLOR: #666;	
+    TEXT-DECORATION: none
+}
+    
+</style>
+
+<div class="ISI_IGNORE" id="at_narrow_wrapper">
+    <div>
+        <img height="2" alt="" src="/images/gifs/at_narrow_top.gif"
+            width="135" /></div>
+    <div id="at_narrow_inner">
+        <!-- email article -->
+        <div class="at_link">
+            <a href="qn_send.asp?StoryID=1093440938&subl=true">
+                <img height="12" alt="" src="/images/gifs/icon_at_email.gif"
+                    width="12" border="0" />&nbsp; E-Mail Article</a></div>
+        <div>
+            <img height="1" alt="" src="/images/gifs/dots_at_narrow.gif" width="118" /></div>
+        <!-- /email article -->
+        <!-- printer friendly -->
+        <div class="at_link">
+            <a href="javascript:Void(0)" onclick="javascript:window.open('qn_print.asp?StoryID=1093440938&subl=true','newswin','resizable=yes,width=710,height=500,status=no,location=no,toolbar=no,scrollbars=yes')">
+                <img height="12" alt="" src="/images/gifs/icon_at_printerfriendly.gif"
+                    width="12" border="0" />&nbsp; Printer-Friendly</a></div>
+        <div>
+            <img height="1" alt="" src="/images/gifs/dots_at_narrow.gif"
+                width="118" /></div>
+        <!-- /printer friendly -->
+         <div class="at_link">
+            <a href="javascript:Void(0)" onclick="javascript:window.open('http://translate.google.com/translate?u=http%3A%2F%2Fwww%2Emenafn%2Ecom%2Fqn%5Fnews%5Fstory%5Fs%2Easp%3Fstoryid%3D1093440938&&sl=en&tl=ar&hl=en&ie=UTF-8','newswin','resizable=yes,width=800,height=600,status=no,location=no,toolbar=no,scrollbars=yes')">
+                <img height="12" alt="" src="/images/gifs/icon_at_translate.gif"
+                    width="12" border="0" />&nbsp; Translate</a></div>
+        <div>
+            <img height="1" alt="" src="/images/gifs/dots_at_narrow.gif"
+                width="118" /></div>
+        
+        <!-- share article -->
+        <div class="at_link">
+                    
+<!-- AddThis Button BEGIN -->
+
+<script type="text/javascript">
+addthis_pub  = 'menafn';
+addthis_logo = 'http://www.menafn.com/images/Menafnlogo.gif';
+//addthis_logo_background = 'EFEFFF';
+//addthis_logo_color      = '666699';
+addthis_brand   = 'www.menafn.com';
+//addthis_options         = 'favorites, email, digg, delicious, myspace, facebook, google, live, more';
+</script>
+
+<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')"
+    onmouseout="addthis_close()" onclick="return addthis_sendto()">
+    <img height="12" alt="" src="/images/gifs/icon_at_share.gif" width="12" border="0" />&nbsp;Share Article</a>
+    <script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+<!-- AddThis Button END -->
+                    </div>
+        <div>
+            <img height="1" alt="" src="/images/gifs/dots_at_narrow.gif"
+                width="118" /></div>
+        <!-- /share article -->
+        <!-- text size -->
+        <div class="at_link">
+            <div style="padding-right: 4px; float: right; color: #0000ff;">
+                <a href="javascript:sizeDown()">
+                    <img height="15" alt="" src="/images/gifs/btn_textsize_sm.gif"
+                        width="15" border="0" /></a>&nbsp;&nbsp;<a href="javascript:sizeUp()"><img height="15"
+                            alt="" src="/images/gifs/btn_textsize_lg.gif" width="15"
+                            border="0" /></a></div>
+            <div>
+                <a href="javascript:resetCurrentsize();">
+                <img height="12" alt="" src="/images/gifs/icon_at_textsize.gif" width="12" border="0" />&nbsp;Text Size</a></div>
+        </div>
+        <div>
+            <img alt="" height="1" src="/images/gifs/dots_at_narrow.gif" width="118" /></div>
+        <br />
+        <br />
+        <!-- text size -->
+        <!-- Google Ads -->
+        <div class="at_link">
+        <a href="http://twitter.com/menafn" target="_blank"><img src="/images/shared_images/twitterbutton-0106.gif" width="120" height="48" style="border:0"> </a>
+                    
+<script type="text/javascript"><!--
+		google_ad_client ="pub-1786942026589567";
+		google_ad_width = 120;
+		google_ad_height = 240;
+		google_ad_format = "120x240_as";
+		google_ad_type = "text_image";
+		google_ad_channel ="2954532141";
+		google_color_border = "FFFFFF";
+		google_color_bg = "FFFFFF";
+		google_color_link = "006699";
+		google_color_url = "006699";
+		google_color_text = "666666";
+	//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+ 
+<div class="addthis_toolbox addthis_default_style">
+                    <a class="addthis_button_twitter"></a> </div>
+                    </div>
+
+       <!-- Google Ads -->
+        <div>
+            <img height="1" alt="" src="/images/gifs/dots_at_narrow.gif"
+                width="118" /></div>
+        <div style="padding-right: 5px; padding-left: 5px; padding-bottom: 5px; padding-top: 5px"
+            align="center">
+            
+            <!-- 88x31 button -->
+            <!-- No ad for europe_88x31_article -->
+            <!-- /88x31 button -->
+        </div>
+    </div>
+    <div>
+        <img height="3" alt="" src="/images/gifs/at_narrow_bot.gif"
+            width="135" /></div>
+</div>
+
+<input name="CurrentSize" id="CurrentSize" type="hidden" value="13"> 
+
+
+<div class="newsDisp" id="resizeableText" style='text-align: justify;'>The worsening situation in the Eurozone sent the common currency on a nosedive against the safe haven Japanese Yen, striking a 10-year low, to fall below key technical levels as well as option barrier. The Euro also slumped to a 7-month trough against the U.S. Dollar. Growing worries over whether or not Greece will default on its debt obligations is keeping the single currency under significant pressure. <br /><br>	<br /><br>	As reported at 2:31 p.m. (JST) in Tokyo, the Euro was trading down 1.6% against the Japanese Yen to 104.10 Yen, the lowest price in a decade. Against the greenback, it fell 1% to $1.3520, after falling to $1.3494, the lowest price for the EUR/USD pair since February. <br /><br>	<br /><br>	Viewed as a barometer of risk appetite, the Australian Dollar lost 1.6% of its value in Asian trading, dropping to a 3-week low and below the 200-day moving average. The AUD/USD pair fell to $1.0340 at one point in the session.<br /><br>	<br /><br>	As one analyst in Tokyo pointed out, the Eurozone's troubles don't seem to ever completely resolve; a new one just compounds the old. Now, markets are worried that France's banks could be hit with a ratings downgrade even as Italy's sovereign debt is also in jeopardy of a downgrade, as Moody's 90-day deadline approaches.<br /><br>	</span></span></p><br></div>
+                            <br></td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp; </td>
+                        </tr>
+                        <tr>
+                          <td><br>
+                            <br>
+                            
+                            <a href="http://www.dailyforex.com" target="_blank">
+                            <img border="0" src="updates/provider/DailyForex.png" >
+                            </a>
+                            
+                            </td>
+                        </tr>
+                         <tr>
+        <td>
+            <br><br>
+            <!-- include virtual="/includes/redirect.asp" -->
+
+<table border='0' cellpadding='0' cellspacing='5' ID="Table1">
+    <tr>
+        <td height='15' width='100%' valign='top' align='left' class='tableTitle' colspan="2">
+            <span class='myFont'>&nbsp MENA News Headlines</span><br>
+        </td>
+    </tr>
+    <tr>
+        <td  valign='top'>
+            <!-- CONTENT -->
+            <!--include file ="format_news_r.usingdb.asp"-->
+<table border= 0 width=0>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441207'>Flydubai to launch Tbilisi route</a> </b> ,<small>MENAFN</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN) Flydubai's CEO, Ghaith Al Ghaith, said that the carrier would launch its service to Tbilisi, the capital of Georgia, to become Flydubai's 45th destination on its network, reported Khaleej  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441204'>Saudi private sector's salaries to go up 5% in next 12 months</a> </b> ,<small>MENAFN</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN) The Hay Group, a global management consulting firm, said that over the next twelve months, salaries at Saudi's private sector would go up by 5 percent, reported Arabian Business.
+
+The  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441201'>Bahrain's 2011 economy to avoid recession</a> </b> ,<small>MENAFN</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN) Business Monitor International (BMI) said that this year, Bahrain's economy wouldn't fall into recession due to the government's growing spending along with external financial aid, reported  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441186'>Oman Air inks deal to promote inbound, outbound tourism</a> </b> ,<small>MENAFN</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN) Oman Air's COO, Abdulrazaq Alraisi, said that the carrier signed a deal with Bahwan Travel Agencies to launch Oman's largest travel company in order to promote inbound and outbound tourism,  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441227'>Oasis500 Holds Its 2nd Angel Network Event
+</a> </b> ,<small>MENAFN Press</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN Press) Offering new investment ideas to the MENA region
+
+Oasis500, the MENA Region's premier early stage and seed investment company, held its 2nd Angel Network Event on 12th September  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441226'>Oasis500 Holds Its 2nd Angel Network Event
+</a> </b> ,<small>MENAFN Press</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN Press) Offering new investment ideas to the MENA region
+
+Oasis500, the MENA Region's premier early stage and seed investment company, held its 2nd Angel Network Event on 12th September  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441167'>IMF prepared to provide Libya with external financing</a> </b> ,<small>MENAFN</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN) The International Monetary Fund's (IMF) director of the Middle East and Central Asia department, Masood Ahmed, said that the fund was ready to give Libya external financing if needed,  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441224'>Tourists return to Sharjah in big numbers this summer</a> </b> ,<small>MENAFN Press</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN Press) International tourists are once again flocking to Sharjah in extraordinary numbers this summer.  The month of July, the peak of summer vacation in the Gulf and elsewhere, witnessed a  ...</TD>
+</TR>
+<TR>
+<TD valign='top'  class='txtGray' valign='top' nowrap= >
+Sep 13 2011
+</TD>
+<td valign='top'><img src=/images/shared_images/blt_news.gif  vspace=2 border=0 /></td>
+<TD valign='top' width='100%' class='txtGray' align='left'>
+<b> <a class='newsDispMoretitle' href  = '
+../../qn_news_story_s.asp?StoryId=1093441214'>Entries now closed for 2011 Etisalat Award for Arabic Children's Literature</a> </b> ,<small>MENAFN Press</small></TD>
+</TR>
+<TR>
+<td valign='top' colspan='2'></td>
+<TD valign='top' class='txtGray storyshort' align='left'>
+(MENAFN Press) The UAE Board on Books for Young People (UAEBBY) has announced that entries for the third edition of the Etisalat Award for Arabic Children's Literature have now closed. The closing  ...</TD>
+</TR>
+<tr>
+<td colspan=3 align=right><img src=/images/shared_images/blt_news_more.gif hspace=5 border=0 />
+<a href =/qn_mena_headlines_r.asp?nextID=1093441214><b>more...</b></a>
+</td>
+</tr>
+</table>
+
+        </td>
+    </tr>
+</table>
+            <!-- include virtual="/includes/moreMenaNews.asp"-->
+           <!-- include virtual="/includes/RelatedNews.asp"-->
+        </td>
+    </tr>
+                       
+                      </table>
+                      <br>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table border="0" width="100%">
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><div>
+                        <!-- log name='calling' banner_inc='30' layout='top' country=EU ip='209.134.7.66' --><!-- log name='campaign' value='' layout='top' page='/qn_news_story_s.asp'--><!-- log name='campNull' value='-1' --><!--log name='err' value='Invalid use of Null' Source='Microsoft VBScript runtime error' Number='94'-->
+                      </div></td>
+                  </tr>
+                  
+                </table></td>
+                   <td width='10px'><!-- space for 10 pix--><img src='/images/shared/img_trnsp.gif' width='10px'></td>
+              <td valign="top" align="right" style="padding-right:0px"><!-- start of the third column  -- ><!-- log name='calling' banner_inc='30' layout='homeb' country=EU ip='209.134.7.66' --><!-- log name='campaign' value='712' layout='homeb' page='/qn_news_story_s.asp'--><!-- log banner=894 activeBanners=894,893,  --><script type="text/javascript"><!--
+google_ad_client = "pub-1786942026589567";
+/* Image Banner - square */
+google_ad_slot = "3362589967";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><!--log name='err' value='Object variable not set' Source='Microsoft VBScript runtime error' Number='91'-->
+                <br />
+		<br />
+               <div style="padding-right:0px;text-align:center">
+                <!-- dddd = False--><!-- dddd1=0-->
+  <DIV id="PopBoxWraper">
+    <DIV class="Popcontentbox">
+      <DIV class="Popcontentbox_cap">
+        <DIV class="boxcorner_ul">
+          <!-- -->
+        </DIV>
+        <div class="boxcorner_ur">
+          <!-- -->
+        </div>
+      </DIV>
+      
+      <DIV id="mostPopbox">
+        <H3 class="section_label">Most popular stories</H3>
+        <DIV class="dots"></DIV>
+        <DIV id="mostPopbox_nav">
+          <DIV id="mostPopbox_rss">
+          <!--A href="http://www.menafn.com/rss/Menafn_MostaPopular_= XMlvesrion _en.xml" target="_blank"-->
+          <A href="http://www.menafn.com/rss/Menafn_MostaPopular_Local_en.xml" target="_blank">
+                              <IMG height="10" alt="" src="/images/rss/rssIcon.png" width="10" border="0" /></A>
+                              </DIV>
+          <DIV class="item_on" id="div1"><A href="javascript:void(0);" onClick="GetPopularStorys(this.id,'0','L');" id="pop1"  rel="div1">24 Hours</A></DIV>
+          <DIV class="bar">|</DIV>
+          <DIV class="item" id="div7"><A href="javascript:void(0);" onclick="GetPopularStorys(this.id,'0','L');" id="pop7"  rel="div7">7 Days</A></DIV>
+          <DIV class="bar">|</DIV>
+          <DIV class="item" id="div30"><A href="javascript:void(0);" onclick="GetPopularStorys(this.id,'0','L');" id="pop30"  rel="div30">30 Days</A></DIV>
+        </DIV>
+        <DIV id='popStoryUpdate'>
+      </DIV>
+    </DIV>
+    
+    <DIV class="Popcontentbox_cap">
+      <DIV class="boxcorner_ll">
+        <!-- -->
+      </DIV>
+      <DIV class="boxcorner_lr">
+        <!-- -->
+      </DIV>
+    </DIV>
+  </DIV>
+<script type="text/javascript">
+
+          Event.observe(window, 'load', function() {  
+
+           GetPopularStorys('pop1','0','L');
+         });
+
+
+
+</script>
+</DIV>
+
+
+<!--Hangman by TheFreeDictionary.com-->
+<div style="width:350px;position:relative;background-color:;padding:4px">
+<div style="font:bold 12pt '';color:#000000">Hangman</div>
+<style>
+#Hangman {border:1px #000000 solid;background-color:;height:120px}
+</style>
+<iframe id="Hangman" src="http://www.thefreedictionary.com/_/WoD/hangman.aspx?#,x000000,x0000FF,10pt,''" width="100%" scrolling="no" frameborder="0"></iframe>
+<div style="font:normal 8pt '';color:#000000">
+<a style="color:#000000" href="http://www.thefreedictionary.com/lookup.htm#Hangman">Hangman</a>
+provided by <a style="color:#000000" href="http://www.thefreedictionary.com/">The Free Dictionary</a>
+</div></div>
+<!--end of Hangman-->
+
+				</div>
+                
+                
+                
+                <div style="padding-right:0px">
+                
+
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right-1" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form-1">
+    <form  action="http://www.menafn.com/MenaGoogleSearch.asp" id="cse-search-box-1">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-1786942026589567:sao396-3ere" />
+        <input type="hidden" name="cof" value="FORID:10" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="25" />
+        <input type="submit" name="sa" value="Search" />
+         <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" align="absmiddle" />
+      </div>
+      
+    </form>
+  </div>
+ <!-- <div class="cse-branding-logo-1">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>-->
+  <!--<div class="cse-branding-text-1">
+    Custom Search
+  </div>-->
+</div>
+ 
+
+
+
+</div>
+<br />
+			<div style="padding-right:0px">
+				<!-- log name='calling' banner_inc='30' layout='space' country=EU ip='209.134.7.66' --><!-- log name='campaign' value='' layout='space' page='/qn_news_story_s.asp'--><!-- log name='campNull' value='-1' --><!--log name='err' value='Invalid use of Null' Source='Microsoft VBScript runtime error' Number='94'-->
+    		</div>
+          
+</td>
+</tr>
+</table>
+</td>
+</TR>
+</table>
+<br>
+</td>
+</tr>
+</table>
+</td>
+</TR>
+</table>
+
+
+
+  <script type="text/javascript">
+
+          Event.observe(window, 'load', function() {  
+           GetPopularStorys('pop1','0','L');
+         });
+
+
+
+</script>
+<!-- Footer -->
+
+</div>
+<p>
+
+<script>
+function disableSelection(target){if (typeof target.onselectstart!="undefined")	target.onselectstart=function(){return false};else if (typeof target.style.MozUserSelect!="undefined")target.style.MozUserSelect="none";else target.onmousedown=function(){return false};target.style.cursor = "default"};
+disableSelection(document.body);
+</script>
+
+</p>
+
+
+
+<table border="0" width="100%" cellpadding="2" bgcolor="#FFFFFF" cellspacing="0"  class="BlueWhiteText">
+	<tr  class="BlueWhiteText">
+		<td colspan="8" height="1" class="Darkgrey"></td>
+	</tr>
+	<tr  class="Darkgrey">
+		<td colspan="8" height="2"  align="left" valign="top">&nbsp;
+		 </td>
+	</tr>
+	<tr>
+		<td width="10%">&nbsp;</td>
+		<td>
+		<p align="center"><b><a href="http://www.menafn.com?Src1=foot">
+				<font color="#FFFFFF" size="4">
+				<img border="0" src="/images/shared_images/tb_sm_logo.gif" width="177" height="15" hspace="4" vspace="4" alt="Middle East North Africa - Financial Network"></font></a></b></td>
+		<td><font color="#FFFFFF" size="4"><b>MENAFN News</b></font></td>
+		<td><font color="#FFFFFF" size="4"><b>Market Data</b></font></td>
+		<td><font color="#FFFFFF" size="4"><b>Countries</b></font></td>
+		<td><font color="#FFFFFF" size="4"><b>Tools</b></font></td>
+		<td><font color="#FFFFFF" size="4"><b>Section</b></font></td>
+		<td width="10%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">&nbsp;</td>
+		<td align="left" valign="top">
+		<p align="center"><font color="#FFFFFF"><img border="0" src="/images/shared_images/footer_map.gif"  hspace="4" vspace="10" alt="Middle East North Africa - Financial Network"><br />
+		  </font>
+		  <a  class="BlueWhiteText" href="/arabic"><font color="#FFFFFF">Arabic MENAFN</font></a></td>
+	  <td nowrap="nowrap" align="left" valign="top">
+		<a href="/qn_news_sections.asp?Src1=foot"><font color="#FFFFFF">Main News</font></a><font color="#FFFFFF"><br>
+		</font>
+		<a href="/qn_news_sections.asp?src=s&Src1=foot"><font color="#FFFFFF">News By Industry</font></a><font color="#FFFFFF"><br>
+		</font>
+		<a href="/qn_news_sections.asp?src=c&Src1=foot"><font color="#FFFFFF">News By Country</font></a><font color="#FFFFFF"><br>
+		</font>
+		<a href="/qn_news_sections.asp?src=m&Src1=foot"><font color="#FFFFFF">Marketwatch News</font></a><font color="#FFFFFF">
+        <br />UPI News</a>
+		<br />Comtex News</a>
+		</font>
+		<p>
+		<a href="/ipo.asp?Src1=foot"><font color="#FFFFFF">IPO News</font></a><font color="#FFFFFF"><br>
+		</font>
+	<a href="/if.asp?Src1=foot"><font color="#FFFFFF">Islamic Finance News</font></a><font color="#FFFFFF"><br>
+		</font>
+	<a href="/pe.asp?Src1=foot"><font color="#FFFFFF">Private Equity News</font></a><font color="#FFFFFF">
+		</font>
+		</p>
+		<p><a href="/how-to-guides.asp?Src1=foot"><font color="#FFFFFF">How-To 
+	Guides</font></a><a href="/technology.asp?Src1=foot"><font color="#FFFFFF"><br />
+	Technology 
+	    Section</font></a><font color="#FFFFFF"><br />
+      	</font>
+      <a href="/travel.asp?Src1=foot"><font color="#FFFFFF">Travel Section<br />
+      	</font>
+      </a><font color="#FFFFFF"><br />
+      	</font>
+      <a href="/advanced_search_main.asp?Src1=foot"><font color="#FFFFFF">Search News 
+		</font> </a></td>
+		<td nowrap="nowrap" align="left" valign="top">
+          <a href="/qn_market.asp?Src1=foot"><font color="#FFFFFF">Market Indices</font></a><font color="#FFFFFF"><br>
+	      </font>
+	      <a href="/qn_quotes_charts.asp?Src1=foot"><font color="#FFFFFF">Quotes &amp; Charts</font></a><p><a href="/qn_market.asp?region=other&Src1=foot">
+			<font color="#FFFFFF">Global Indices</font></a><font color="#FFFFFF"><br>
+		   </font>
+		   <a href="/qn_market.asp?region=mena&Src1=foot"><font color="#FFFFFF">Arab Indices</font></a></p>
+		<p><a href="/qn_market.asp?region=us&amp;UsSymb=NASDAQ&Src1=foot">
+		<font color="#FFFFFF">US Markets Details</font></a></p>
+		<p><a href="/qn_commodities_r.asp?Src1=foot"><font color="#FFFFFF">Commodoties</font></a></p>
+		<p><a href="/qn_energy_r.asp?Src1=foot"><font color="#FFFFFF">Oil &amp; Energy</font></a></p>
+		<p><a href="/qn_currencies.asp?currency=cross&Src1=foot"><font color="#FFFFFF">Currencies Cross Rates</font></a><font color="#FFFFFF"><br>
+		   </font>
+		   <a href="/currency.asp?Src1=foot"><font color="#FFFFFF">Currencies Updates</font></a><font color="#FFFFFF"><br>
+		   </font>
+		   <a href="javascript:calculators('currency');"><font color="#FFFFFF">Currency Convertor<br /><br />
+		</font></a>
+			<font color="#FFFFFF">USA Stocks<br />
+			Arab Stocks<br>
+&nbsp;</font></p></td>
+		<td width="100" align="left" valign="top">
+	<a href="/qn_country.asp?country=DZ">
+	<font color="#FFFFFF">Algeria&nbsp;
+	</font>
+	</a>
+	<font color="#FFFFFF">
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=BH">
+	<font color="#FFFFFF">Bahrain</font></a><font color="#FFFFFF">&nbsp;
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=EG">
+	<font color="#FFFFFF">Egypt&nbsp;
+	</font>
+	</a>
+	<font color="#FFFFFF">
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=IQ">
+	<font color="#FFFFFF">Iraq</font></a><font color="#FFFFFF"><br>
+	</font>
+	<a href="/qn_country.asp?country=JO">
+	<font color="#FFFFFF">Jordan</font></a><font color="#FFFFFF">&nbsp;
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=KW">
+	<font color="#FFFFFF">Kuwait&nbsp;
+	</font>
+	</a>
+	<font color="#FFFFFF">
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=LB">
+	<font color="#FFFFFF">Lebanon<br>
+	</font>
+	</a><a href="qn_country.asp?country=MA">
+	<font color="#FFFFFF">Morocco</font></a><font color="#FFFFFF">&nbsp;
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=OM">
+	<font color="#FFFFFF">Oman</font></a><font color="#FFFFFF">&nbsp;
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=PS">
+	<font color="#FFFFFF">Palestine</font></a><font color="#FFFFFF"><br>
+	</font>
+	<a href="/qn_country.asp?country=QA">
+	<font color="#FFFFFF">Qatar</font></a><font color="#FFFFFF">&nbsp;
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=SA">
+	<font color="#FFFFFF">Saudi Arabia&nbsp;
+	</font>
+	</a>
+	<font color="#FFFFFF">
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=SY">
+	<font color="#FFFFFF">Syria</font></a><font color="#FFFFFF"><br>
+	</font>
+	<a href="/qn_country.asp?country=TN">
+	<font color="#FFFFFF">Tunisia&nbsp;
+	</font>
+	</a>
+	<font color="#FFFFFF">
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=TRK">
+	<font color="#FFFFFF">Turkey</font></a><font color="#FFFFFF">&nbsp;
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=AE">
+	<font color="#FFFFFF">UAE</font></a><font color="#FFFFFF">&nbsp;
+	<br>
+	</font>
+	<a href="/qn_country.asp?country=YE">
+	<font color="#FFFFFF">Yemen</font></a></td>
+
+		<td nowrap="nowrap" align="left" valign="top">
+          <p><a href="/qn_weather.asp?Src1=foot"><font color="#FFFFFF">Weather</font></a><font color="#FFFFFF"><br />
+            </font>
+            <a href="/snap/ic/ic_login.asp?Src1=foot"><font color="#FFFFFF">Investment Game<br />
+            </font>
+            </a><a href="/qn_calendar.asp?Src1=foot"><font color="#FFFFFF">Economic Calendar</font></a><font color="#FFFFFF"><br />
+            </a></font><a href="/Glossary/bfglosa.asp?Src1=foot"><font color="#FFFFFF">Financial Glossary<br />
+            </font>
+            </a><font color="#FFFFFF"><br />
+            </font>
+            <a href="/my_login.asp?Src1=foot"><font color="#FFFFFF">My MENAFN</font></a><font color="#FFFFFF"><br />
+            </font>
+            <a href="/my_portf_valua.asp?Src1=foot"><font color="#FFFFFF">Portfolio Tracker</font></a><font color="#FFFFFF"> <br />
+            <br />
+            </font>
+            <a href="/vo_center.asp?Src1=foot"><font color="#FFFFFF">Voting<br />
+            </font>
+            </a><font color="#FFFFFF"><br />		
+            </font>		
+            <a href="/tl_calculators.asp?Src1=foot"><font color="#FFFFFF">Financial Calculators</font></a><font color="#FFFFFF"><br />
+            <br />
+          </font>
+          <a href="/rss/index.asp?Src1=foot"><font color="#FFFFFF">RSS Feeds [XML]</font></a></p></td>
+	  <td nowrap="nowrap" align="left" valign="top">
+	
+	<p><a title="Arab Listed Companies Information" href="/cm">
+	<font color="#FFFFFF">Corporate Monitor</font></a><font color="#FFFFFF"><br />
+	  <br>
+	  </font>
+	  <a href="/events/"><font color="#FFFFFF">Events</font></a><font color="#FFFFFF"><br />
+	  <br>
+	  </font>
+	  <a href="/Realestate/"><font color="#FFFFFF">Real Estate</font></a><font color="#FFFFFF"><br />
+	  </font>
+	  <a href="/realestate/Register.aspx?Src1=foot"><font color="#FFFFFF">Submit Your Property 
+	</font> </a></p>
+	<p>
+	  <a href="/rc_research.asp?Src1=foot"><font color="#FFFFFF">Arab Research</font></a><font color="#FFFFFF"><br />
+	  </font>
+	  <a href="/research/"><font color="#FFFFFF">Buy a Research</font></a><font color="#FFFFFF"><br />
+	  <br>
+	  </font>
+	  <a href="/pr/index.asp?Src1=foot"><font color="#FFFFFF">Press Releases</font></a><font color="#FFFFFF"><br>
+	  </font>
+	  <a href="/pr/login.asp?Src1=foot"><font color="#FFFFFF">Submit your PR</font></a><font color="#FFFFFF"><br>
+	  <br />
+	  </font>
+	  <a href="/nl_sub.asp?Src1=foot"><font color="#FFFFFF">Join Newsletters </font> </a>
+		<font color="#FFFFFF"><br />
+	    <br />
+	    <br />
+      </font>
+      </td>
+		<td align="left" valign="top">&nbsp;</td>
+	</tr>
+	<tr>
+	<td colspan="8" height="1" ></td>
+	</tr>
+	<tr>
+		<td></td>		<td colspan="7" height="1" >
+
+<font color="#FFFFFF"><font face="Times New Roman">&copy;&nbsp;</font>2000 menafn.com All Rights Reserved.&nbsp;
+</font>
+<a href="/mf_terms.asp?Src1=foot"><font color="#FFFFFF">Terms of Service</font></a><font color="#FFFFFF">&nbsp;|&nbsp;</font><a href="/mf_privacy.asp?Src1=foot"><font color="#FFFFFF">Privacy 
+Policy</font></a><font color="#FFFFFF">&nbsp;|&nbsp;</font><a href="/mf_contact.asp?Src1=foot"><font color="#FFFFFF">Contact Us</font></a><font color="#FFFFFF">&nbsp;|&nbsp;</font><a href="/mf_advertise.asp?Src1=foot"><font color="#FFFFFF">Advertise</font></a><font color="#FFFFFF"> 
+| </font> <a href="/mf_about.asp"><font color="#FFFFFF">About MENAFN</font></a><font color="#FFFFFF">&nbsp;|&nbsp;</font><a href="/mf_jobs.asp"><font color="#FFFFFF">Career 
+Opportunities</font></a><font color="#FFFFFF">&nbsp;|&nbsp;</font><a href="/mf_feedback.asp"><font color="#FFFFFF">Feedback</font></a><font color="#FFFFFF">&nbsp;|&nbsp;</font><a href="#"><font color="#FFFFFF">Help</font></a><font color="#FFFFFF">
+</font> <a href="/mgmt/in_users.asp"><font color="#FFFFFF"><img src='/images/inc_images/btn_mgmt.gif' border='0'></font></a><font color="#FFFFFF">
+</font>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

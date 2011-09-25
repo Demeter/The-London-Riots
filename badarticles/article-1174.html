@@ -1,0 +1,19 @@
+
+		<html>
+			<head>
+				<script>
+					var MyTool = null;
+					function ToolBarInit (tool)
+					{
+						MyTool = tool;
+						var date = new Date();
+						date.setTime(date.getTime()+86400000);
+						var expires = date.toGMTString();
+						document.cookie = "ZITOOLBARID="+MyTool.toolbarid+";expires="+expires+";domain=.zawya.com;";
+					}
+				</script>
+				<meta http-equiv="refresh" content="1;url=/story.cfm/sidDN20110920005106?cc">
+			</head>
+			<body></body>
+		</html>
+		
